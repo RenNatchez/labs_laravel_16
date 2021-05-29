@@ -1,0 +1,14 @@
+.bg_register{
+    background-image: url("/image/guest_auth.jpg");
+    background-size: cover;
+    background-position: center;
+}
+.btn_send{
+    background-color: #2edeaa;
+}
+.btn_send:hover{
+    background-color: #0af5ae;
+}
+.text_input{
+    color: #2edeaa;
+}
