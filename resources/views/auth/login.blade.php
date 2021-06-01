@@ -6,6 +6,7 @@
                 <div class="absolute bg-black opacity-60 inset-0 z-0"></div>
             </div>
             <div class="w-full py-6 z-20  bg-green-">
+                <img src="{{asset('image/big-logo.png')}}" class="m-auto" alt="logo_labs">
                 <div class="divide-y divide-white-300 divide-opacity-25">
                     <div class="py-5">
                         <h1 class=" text-5xl text-center">Connectez-vous !</h1>
