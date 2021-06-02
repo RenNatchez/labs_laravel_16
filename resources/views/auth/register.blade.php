@@ -16,31 +16,42 @@
                         <x-auth-validation-errors class="mb-4" :errors="$errors" />
                         <form method="POST" action="{{ route('register') }}">
                             @csrf
-                            {{-- identité --}}
-                            <div class="flex justify-between">
+                            <div class="flex justify-between my-3">
                                 <!-- Name -->
                                 <div class="w-5/12">
                                     <x-label for="nom" />
                                     <x-input placeholder='Nom' id="nom"
-                                        class="block mt-1 w-full bg-gray-800 border-gray-500 text_input" type="text" name="nom"
-                                        :value="old('nom')" />
+                                        class="block mt-1 w-full bg-gray-800 border-gray-500 text_input" type="text"
+                                        name="nom" :value="old('nom')" />
                                 </div>
                                 <!-- Prenom -->
                                 <div class="w-5/12">
                                     <x-label for="prenom" />
                                     <x-input placeholder='Prenom' id="prenom"
-                                        class="block mt-1 w-full bg-gray-800 border-gray-500 text_input" type="text" name="prenom"
-                                        :value="old('prenom')" />
+                                        class="block mt-1 w-full bg-gray-800 border-gray-500 text_input" type="text"
+                                        name="prenom" :value="old('prenom')" />
                                 </div>
                             </div>
-                            <!-- Email Address -->
-                            <div class="my-10">
-                                <x-label for="email" />
-                                <x-input placeholder='Email' id="email"
-                                    class="block mt-1 w-full  bg-gray-800 border-gray-500 text_input" type="email" name="email"
-                                    :value="old('email')" required />
+                            <div class="flex justify-between my-3">
+                                <div class="w-5/12">
+                                    <x-label for="email" />
+                                    <x-input placeholder='Email' id="email"
+                                        class="block mt-1 w-full  bg-gray-800 border-gray-500 text_input" type="email"
+                                        name="email" :value="old('email')" required />
+                                </div>
+                                <div class="w-5/12">
+                                    <x-label for="photo" />
+                                    <x-input placeholder='photo' id="photo"
+                                        class="block mt-1 w-full bg-gray-800 border-gray-500 text_input" type="text"
+                                        name="photo" :value="old('photo')" />
+                                </div>
                             </div>
-                            <!-- Password -->
+                            <div class="w-full my-3">
+                                <x-label for="description" />
+                                <textarea placeholder='Description' id="description"
+                                    class="block mt-1 w-full bg-gray-800 border-gray-500 text_input  h-24" type="text"
+                                    name="description" required></textarea>
+                            </div>
                             <div class="flex justify-between">
                                 <div class="w-5/12">
                                     <x-label for="password" />
@@ -56,30 +67,28 @@
                                         name="password_confirmation" required />
                                 </div>
                             </div>
-                            <div class="pt-5 flex justify-between">
+                            <div class="pt-5 flex justify-between my-3">
                                 <div class="flex items-center justify-end mt-4">
-                                    <a class=" text-sm text-white hover:text-gray-400"
-                                        href="/">
+                                    <a class=" text-sm text-white hover:text-gray-400" href="/">
                                         {{ __('Retourner sur le site') }}
                                     </a>
                                 </div>
                                 <div class="flex items-center justify-end mt-4">
-                                    <a class=" text-sm text-white hover:text-gray-400"
-                                        href="{{ route('login') }}">
+                                    <a class=" text-sm text-white hover:text-gray-400" href="{{ route('login') }}">
                                         {{ __('Vous avez déjà un compte ?') }}
                                     </a>
-    
+
                                     <x-button class="ml-4 text-2xl btn_send">
                                         {{ __("S'inscrire") }}
                                     </x-button>
                                 </div>
                             </div>
-                            </div>
-                        </form>
-
                     </div>
+                    </form>
+
                 </div>
             </div>
+        </div>
         </div>
     </x-auth-card>
 </x-guest-layout>

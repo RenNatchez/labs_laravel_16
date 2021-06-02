@@ -20,6 +20,14 @@
 .bg_fuchsia{
     background-color: #6656c6;
 }
-
-
-
+textarea{
+    resize: none;
+}
+.card_carousel{
+    width: 32%;
+}
+.testtest{
+    position: absolute;
+    top: 250px;
+    z-index: 1000;
+}

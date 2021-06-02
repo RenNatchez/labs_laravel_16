@@ -21,8 +21,8 @@ class CreateUsersTable extends Migration
             $table->timestamp('email_verified_at')->nullable();
             $table->string('photo');
             $table->string('description');
-            $table->unsignedBigInteger('poste_id');
-            $table->foreign('poste_id')->references('id')->on('postes');
+            // $table->unsignedBigInteger('poste_id');
+            // $table->foreign('poste_id')->references('id')->on('postes');
             $table->string('password');
             $table->rememberToken();
             $table->timestamps();
