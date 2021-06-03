@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Tailwind Starter Template - Night Admin Template: Tailwind Toolbox</title>
+    <title>Dashboard</title>
     <meta name="description" content="description here">
     <meta name="keywords" content="keywords,here">
     <link rel="stylesheet" href="{{asset('css/app.css')}}" />
@@ -72,7 +72,12 @@
                             class="block py-1 md:py-3 pl-1 align-middle text-gray-500 no-underline hover:text-gray-100 border-b-2 border-gray-900  hover:border-pink-400">
                             <i class="fas fa-images fa-fw mr-3"></i><span class="pb-1 md:pb-0 text-sm">Carousel</span>
                         </a>
-                </ul>
+                        <li class="mr-6 my-2 md:my-0">
+                            <a href="{{route('service.index')}}"
+                                class="block py-1 md:py-3 pl-1 align-middle text-gray-500 no-underline hover:text-gray-100 border-b-2 border-gray-900  hover:border-blue-400">
+                                <i class="fas fa-server mr-3"></i><span class="pb-1 md:pb-0 text-sm">Services</span>
+                            </a>
+                    </ul>
             </div>
 
         </div>

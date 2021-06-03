@@ -50,9 +50,7 @@ class CarouselController extends Controller
             'image' => ["required"],
             'texte' => ["required"],
         ]);
-
         $carousel = $id;
-        if ($request->file('image') != null) {
             //STORAGE
             Storage::disk('public')->delete('image/'. $id->image);
             $request->file('image')->storePublicly('image/', 'public');
@@ -65,11 +63,9 @@ class CarouselController extends Controller
             } else {
                 $carousel->start = 0;
             }
-            
             $carousel->save();
+            return redirect()->route('carousel.index');
         }
-        return redirect()->route('carousel.index');
-    }
 
 
 }

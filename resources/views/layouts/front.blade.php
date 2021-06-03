@@ -9,6 +9,8 @@
 	<!-- Favicon -->
 	<link href="img/favicon.ico" rel="shortcut icon"/>
 	<!-- Google Fonts -->
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css">
+
 	<link href="https://fonts.googleapis.com/css?family=Oswald:300,400,500,700|Roboto:300,400,700" rel="stylesheet">
 	<!-- Stylesheets -->
 	<link rel="stylesheet" href="{{asset('assets/css/magnific-popup.css')}}"/>

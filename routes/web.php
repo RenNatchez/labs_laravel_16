@@ -2,7 +2,9 @@
 
 use App\Http\Controllers\CarouselController;
 use App\Http\Controllers\FrontendControllers;
+use App\Http\Controllers\ServiceController;
 use App\Models\Icone;
+use App\Models\Service;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -33,3 +35,12 @@ Route::post('admin/carousel/store', [CarouselController::class, 'store'])->name(
 Route::delete('/admin/carousel/{id}/destroy', [CarouselController::class, 'destroy'])->name('carousel.destroy');
 Route::get('/admin/carousel/{id}/edit', [CarouselController::class, 'edit'])->name('carousel.edit');
 Route::put('/admin/carousel/{id}', [CarouselController::class, 'update'])->name('carousel.update');
+
+
+// Services
+Route::get('/admin/services', [ServiceController::class, 'index'])->name('service.index');
+Route::get('admin/services/create', [ServiceController::class, 'create'])->name('service.create');
+Route::post('admin/services/store', [ServiceController::class, 'store'])->name('service.store');
+Route::delete('/admin/services/{id}/destroy', [ServiceController::class, 'destroy'])->name('service.destroy');
+Route::get('/admin/services/{id}/edit', [ServiceController::class, 'edit'])->name('service.edit');
+Route::put('/admin/services/{id}', [ServiceController::class, 'update'])->name('service.update');

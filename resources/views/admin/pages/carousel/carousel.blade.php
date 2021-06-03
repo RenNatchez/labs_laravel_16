@@ -44,13 +44,13 @@
                         <div class="flex-auto flex justify-around space-x-3">
                             <a href="{{ route('carousel.edit', $carousel->id) }}">
                                 <button
-                                    class="bg_green px-10 py-3 text-sm shadow-sm font-semibold tracking-wider text-white rounded-full">Modifier</button>
+                                    class="bg_green px-10 py-3 text-sm shadow-sm font-semibold tracking-wider text-white rounded-lg">Modifier</button>
                             </a>
                                 <form action="{{route('carousel.destroy', $carousel)}}" method="post">
                                     @csrf
                                 @method('DELETE')
                                 <button
-                                class="bg-red-500 px-10 py-3 text-sm shadow-sm font-semibold tracking-wider text-white rounded-full">Supprimer</button>
+                                class="bg-red-500 px-10 py-3 text-sm shadow-sm font-semibold tracking-wider text-white rounded-lg">Supprimer</button>
                                 </form>
                         </div>
                     </div>

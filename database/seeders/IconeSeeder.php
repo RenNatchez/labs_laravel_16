@@ -30,11 +30,6 @@ class IconeSeeder extends Seeder
             'class' =>'fas fa-book',
             'created_at'=>now()],
 
-            // 4
-            ['nom' => 'Pièce',
-            'class' =>'fas fa-coin',
-            'created_at'=>now()],
-
             // 5
             ['nom' => 'Cœur',
             'class' =>'fas fa-heart',
@@ -53,11 +48,6 @@ class IconeSeeder extends Seeder
             // 8
             ['nom' => 'Personne',
             'class' =>'fas fa-user',
-            'created_at'=>now()],
-
-            // 9
-            ['nom' => 'Chat',
-            'class' =>'fas fa-cat',
             'created_at'=>now()],
 
             // 10
