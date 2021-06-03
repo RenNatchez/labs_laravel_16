@@ -50,3 +50,6 @@ Route::put('/admin/services/{id}', [ServiceController::class, 'update'])->name('
 
 // Services
 Route::get('/admin/video', [VideoController::class, 'index'])->name('video.index');
+Route::get('/admin/video/{id}/edit', [VideoController::class, 'edit'])->name('video.edit');
+Route::put('/admin/video/{id}', [VideoController::class, 'update'])->name('video.update');
+Route::get('/admin/video/{id}/show', [VideoController::class, 'show'])->name('video.show');
