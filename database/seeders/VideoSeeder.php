@@ -16,8 +16,8 @@ class VideoSeeder extends Seeder
     {
         DB::table('videos')->insert([
             // 1
-            ['miniature' => 'test.jpg',
-            'video' => 'https://www.youtube.com/watch?v=WNw7xwmR9Sg',],
+            ['miniature' => 'kai.png',
+            'video' => '"https://youtu.be/n9l73QmBH2s?t=78',],
         ]);
     }
 }

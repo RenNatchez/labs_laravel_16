@@ -72,12 +72,20 @@
                             class="block py-1 md:py-3 pl-1 align-middle text-gray-500 no-underline hover:text-gray-100 border-b-2 border-gray-900  hover:border-pink-400">
                             <i class="fas fa-images fa-fw mr-3"></i><span class="pb-1 md:pb-0 text-sm">Carousel</span>
                         </a>
-                        <li class="mr-6 my-2 md:my-0">
-                            <a href="{{route('service.index')}}"
-                                class="block py-1 md:py-3 pl-1 align-middle text-gray-500 no-underline hover:text-gray-100 border-b-2 border-gray-900  hover:border-blue-400">
-                                <i class="fas fa-server mr-3"></i><span class="pb-1 md:pb-0 text-sm">Services</span>
-                            </a>
-                    </ul>
+                    </li>
+                    <li class="mr-6 my-2 md:my-0">
+                        <a href="{{route('service.index')}}"
+                            class="block py-1 md:py-3 pl-1 align-middle text-gray-500 no-underline hover:text-gray-100 border-b-2 border-gray-900  hover:border-blue-400">
+                            <i class="fas fa-server mr-3"></i><span class="pb-1 md:pb-0 text-sm">Services</span>
+                        </a>
+                    </li>
+                    <li class="mr-6 my-2 md:my-0">
+                        <a href="{{route('video.index')}}"
+                            class="block py-1 md:py-3 pl-1 align-middle text-gray-500 no-underline hover:text-gray-100 border-b-2 border-gray-900  hover:border-red-600">
+                            <i class="fab fa-youtube mr-3"></i><span class="pb-1 md:pb-0 text-sm">Vidéo</span>
+                        </a>
+                    </li>
+            </ul>
             </div>
 
         </div>

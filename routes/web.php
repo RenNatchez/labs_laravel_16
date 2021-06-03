@@ -3,6 +3,7 @@
 use App\Http\Controllers\CarouselController;
 use App\Http\Controllers\FrontendControllers;
 use App\Http\Controllers\ServiceController;
+use App\Http\Controllers\VideoController;
 use App\Models\Icone;
 use App\Models\Service;
 use Illuminate\Support\Facades\Route;
@@ -44,3 +45,8 @@ Route::post('admin/services/store', [ServiceController::class, 'store'])->name('
 Route::delete('/admin/services/{id}/destroy', [ServiceController::class, 'destroy'])->name('service.destroy');
 Route::get('/admin/services/{id}/edit', [ServiceController::class, 'edit'])->name('service.edit');
 Route::put('/admin/services/{id}', [ServiceController::class, 'update'])->name('service.update');
+
+
+
+// Services
+Route::get('/admin/video', [VideoController::class, 'index'])->name('video.index');
