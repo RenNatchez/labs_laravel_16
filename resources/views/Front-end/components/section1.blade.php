@@ -44,8 +44,8 @@
 				<div class="intro-video">
 					<div class="row">
 						<div class="col-md-8 col-md-offset-2">
-							<img src="img/video.jpg" alt="">
-							<a href="https://youtu.be/n9l73QmBH2s?t=78" class="video-popup">
+							<img src=" {{asset('image/'.$video->miniature )}}" alt="">
+							<a href="{{$video->video}}" class="video-popup">
 								<i class="fa fa-play"></i>
 							</a>
 						</div>
