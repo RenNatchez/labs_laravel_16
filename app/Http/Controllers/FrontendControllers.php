@@ -16,7 +16,8 @@ class FrontendControllers extends Controller
         $services = Service::all();
         $video = Video::first();
         $serv_random = $services->random(3);
-        return view('home',compact('carousels','serv_random','video'));
+        $serv_random2 = $services->random(9);
+        return view('home',compact('carousels','serv_random','video','serv_random2'));
     }
 
 }

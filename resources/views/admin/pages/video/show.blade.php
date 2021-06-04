@@ -23,15 +23,8 @@
         <iframe class="w-10/12 sm:w-1/2 h-96 mx-auto" src="{{$video->video}}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
     </div>
 </div>
-
-
 @endsection
 
 
 
-
-
-
-
-
-
+<iframe width="640" height="384" src="https://www.youtube.com/embed/JTqz_IO9jUE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
