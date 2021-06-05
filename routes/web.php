@@ -3,9 +3,12 @@
 use App\Http\Controllers\CarouselController;
 use App\Http\Controllers\FrontendControllers;
 use App\Http\Controllers\ServiceController;
+use App\Http\Controllers\TESTController;
+use App\Http\Controllers\TestimonialController;
 use App\Http\Controllers\VideoController;
 use App\Models\Icone;
 use App\Models\Service;
+use App\Models\Testimonial;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -48,8 +51,17 @@ Route::put('/admin/services/{id}', [ServiceController::class, 'update'])->name('
 
 
 
-// Services
+// Video
 Route::get('/admin/video', [VideoController::class, 'index'])->name('video.index');
 Route::get('/admin/video/{id}/edit', [VideoController::class, 'edit'])->name('video.edit');
 Route::put('/admin/video/{id}', [VideoController::class, 'update'])->name('video.update');
 Route::get('/admin/video/{id}/show', [VideoController::class, 'show'])->name('video.show');
+
+
+// Video
+Route::get('/admin/testimonial', [TestimonialController::class, 'index'])->name('testimonial.index');
+Route::get('admin/testimonial/create', [TestimonialController::class, 'create'])->name('testimonial.create');
+Route::post('admin/testimonial/store', [TestimonialController::class, 'store'])->name('testimonial.store');
+Route::delete('/admin/testimonial/{id}/destroy', [TestimonialController::class, 'destroy'])->name('testimonial.destroy');
+Route::get('/admin/testimonial/{id}/edit', [TestimonialController::class, 'edit'])->name('testimonial.edit');
+Route::put('/admin/testimonial/{id}', [TestimonialController::class, 'update'])->name('testimonial.update');

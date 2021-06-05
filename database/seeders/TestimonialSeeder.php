@@ -16,41 +16,47 @@ class TestimonialSeeder extends Seeder
     {
         DB::table('testimonials')->insert([
             // 1
-            ['nom' => 'burg',
-            'prenom' => 'Ham',
+            ['nom' => 'Ham',
+            'prenom' => 'Client 1',
             'poste' => 'CEO',
-            'photo' => '01',
+            'photo' => '01.jpg',
             'avis' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur leo est, feugiat nec elementum id, suscipit id nulla. Nulla sit amet luctus dolor.',
             'created_at'=>now()],
             // 2
-            ['nom' => 'burg',
-            'prenom' => 'Ham',
+            ['nom' => 'Ticipe',
+            'prenom' => 'Client 2',
             'poste' => 'CEO',
-            'photo' => '01',
+            'photo' => '02.jpg',
             'avis' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur leo est, feugiat nec elementum id, suscipit id nulla. Nulla sit amet luctus dolor.',
             'created_at'=>now()],
-            // 1
-            ['nom' => 'burg',
-            'prenom' => 'Ham',
+            // 3
+            ['nom' => 'Toric',
+            'prenom' => 'Client 3',
             'poste' => 'CEO',
-            'photo' => '01',
+            'photo' => '03.jpg',
             'avis' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur leo est, feugiat nec elementum id, suscipit id nulla. Nulla sit amet luctus dolor.',
             'created_at'=>now()],
-            // 1
-            ['nom' => 'burg',
-            'prenom' => 'Ham',
+            // 4
+            ['nom' => 'Versaire',
+            'prenom' => 'Client 4',
             'poste' => 'CEO',
-            'photo' => '01',
+            'photo' => '02.jpg',
             'avis' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur leo est, feugiat nec elementum id, suscipit id nulla. Nulla sit amet luctus dolor.',
             'created_at'=>now()],
-            // 1
-            ['nom' => 'burg',
-            'prenom' => 'Ham',
+            // 5
+            ['nom' => 'Harne',
+            'prenom' => 'Client 5',
             'poste' => 'CEO',
-            'photo' => '01',
+            'photo' => '01.jpg',
             'avis' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur leo est, feugiat nec elementum id, suscipit id nulla. Nulla sit amet luctus dolor.',
             'created_at'=>now()],
-
+            // 6
+            ['nom' => 'Otto',
+            'prenom' => 'Client 6',
+            'poste' => 'CEO',
+            'photo' => '01.jpg',
+            'avis' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur leo est, feugiat nec elementum id, suscipit id nulla. Nulla sit amet luctus dolor.',
+            'created_at'=>now()],
         ]);
     }
 }

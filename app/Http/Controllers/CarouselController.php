@@ -65,7 +65,7 @@ class CarouselController extends Controller
             }
             $carousel->save();
             return redirect()->route('carousel.index');
-        }
+    }
 
 
 }
