@@ -14,23 +14,6 @@
             </div>
             <!-- contact form -->
             <div class="col-md-6 col-pull">
-                {{-- <form method="POST" action="{{ route('mail') }}">
-                    @csrf
-                    <div class="mb-3">
-                      <label for="mail" class="form-label">Email </label>
-                      <input type="email" class="form-control" id="mail" name="mail" >
-                    </div>
-                    <div class="mb-3">
-                      <label for="name" class="form-label">name</label>
-                      <input type="text" class="form-control" id="name" name="name">
-                    </div>
-                    <div class="mb-3">
-                      <label for="message" class="form-label">message</label>
-                      <textarea class="form-control" name="message" id="message" cols="30" rows="10"></textarea>
-                    </div>
-
-                    <button type="submit" class="btn btn-primary">Submit</button>
-                </form> --}}
                 <form class="form-class" id="con_form" method="POST" action="{{ route('mail') }}"> 
                   @csrf
                   <div class="row">

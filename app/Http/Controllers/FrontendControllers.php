@@ -3,18 +3,23 @@
 namespace App\Http\Controllers;
 
 use App\Mail\MailSender;
+use App\Mail\NewsletterSender;
 use App\Models\Carousel;
 use App\Models\Contact;
+use App\Models\Googlemaps;
 use App\Models\Icone;
+use App\Models\Newsletter;
 use App\Models\Service;
 use App\Models\Subject;
 use App\Models\Testimonial;
 use App\Models\Video;
+use Database\Seeders\NewsletterSeeder;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
 
 class FrontendControllers extends Controller
 {
+    // page home
     public function home()
     {
         $currentpage = 'Home';
@@ -27,14 +32,6 @@ class FrontendControllers extends Controller
         $serv_random = $services->random(3);
         $serv_random2 = $services->random(9);
         return view('home',compact('carousels','serv_random','video','currentpage','serv_random2','testi_last','subjects'));
-    }
-    public function services()
-    {
-        $currentpage = 'Services';
-        $services = Service::all();
-        $serv_page = Service::paginate(4);
-        $serv_random = $serv_page->random(4);
-        return view('front-end.pages.services',compact('services','serv_random','currentpage'));
     }
     public function mailling (Request $request)
     {
@@ -51,5 +48,35 @@ class FrontendControllers extends Controller
         $contact->save();
         return redirect()->back();
     }
+    // page services
+    public function services()
+    {
+        $currentpage = 'Services';
+        $services = Service::all();
+        $subjects = Subject::all();
+        $serv_random = $services->random(3);
+        $serv_random2 = $services->random(3);
+        $serv_page = Service::paginate(9);
+        return view('front-end.pages.services',compact('subjects','services','currentpage','serv_page','serv_random','serv_random2'));
+    }
+    public function newsletter (Request $request)
+    {
+        //welcome inscription - to dynamique
+        Mail::to($request->mail)->send(new NewsletterSender($request));
 
+        $newsletter = new Newsletter();
+        $newsletter->mail = $request->mail;
+        $newsletter->save();
+        return redirect()->back();
+    }
+    // page services
+    public function contact()
+    {
+        $currentpage = 'Contact';
+        $maps = Googlemaps::first();
+        $subjects = Subject::all();
+        return view('front-end.pages.contact',compact('currentpage','subjects','maps'));
+    }
+    
 }
+

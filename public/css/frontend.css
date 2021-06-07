@@ -10,3 +10,27 @@
     color: gray;
     font-family: "Roboto", sans-serif;
 }
+.text_green{
+    color: #2edeaa !important;
+}
+.text_white{
+    color: #fff !important;
+}
+.bg_mauve{
+    font-size: 20px;
+    background-color:#6656c6 !important;
+}
+.icon_phone{
+    margin-bottom: 0px !important;
+}
+.flex_phone{
+display: flex;
+flex-direction: column;
+justify-content: space-between;
+height: 500px;
+}
+@media only screen and (min-width: 950px) {
+    .flex_newsletter{
+        display: flex !important;
+        align-items: center !important;
+    }

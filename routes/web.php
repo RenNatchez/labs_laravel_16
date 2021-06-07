@@ -3,11 +3,15 @@
 use App\Http\Controllers\CarouselController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\FrontendControllers;
+use App\Http\Controllers\GooglemapsController;
+use App\Http\Controllers\NewsletterController;
 use App\Http\Controllers\ServiceController;
 use App\Http\Controllers\TESTController;
 use App\Http\Controllers\TestimonialController;
 use App\Http\Controllers\VideoController;
+use App\Models\Googlemaps;
 use App\Models\Icone;
+use App\Models\Newsletter;
 use App\Models\Service;
 use App\Models\Testimonial;
 use Illuminate\Support\Facades\Route;
@@ -24,6 +28,7 @@ use Illuminate\Support\Facades\Route;
 */
 Route::get('/', [FrontendControllers::class, 'home'])->name('home');
 Route::get('/services', [FrontendControllers::class, 'services'])->name('services');
+Route::get('/contact', [FrontendControllers::class, 'contact'])->name('contact');
 
 
 Route::get('/dashboard', function () {
@@ -70,7 +75,17 @@ Route::put('/admin/testimonial/{id}', [TestimonialController::class, 'update'])-
 
 //Mail
 Route::post('/mail', [FrontendControllers::class, 'mailling'])->name('mail');
+Route::post('/mail/newsletter', [FrontendControllers::class, 'newsletter'])->name('newsletter');
 
 // Contact
 Route::get('/admin/contact', [ContactController::class, 'index'])->name('contact.index');
 Route::delete('/admin/Contact/{id}/destroy', [ContactController::class, 'destroy'])->name('contact.destroy');
+
+// newsletter
+Route::get('/admin/newsletter', [NewsletterController::class, 'index'])->name('newsletter.index');
+Route::delete('/admin/newsletter/{id}/destroy', [NewsletterController::class, 'destroy'])->name('newsletter.destroy');
+
+// googlemaps
+Route::get('/admin/googlemaps', [GooglemapsController::class, 'index'])->name('googlemaps.index');
+Route::get('/admin/googlemaps/{id}/edit', [GooglemapsController::class, 'edit'])->name('googlemaps.edit');
+Route::put('/admin/googlemaps/{id}', [GooglemapsController::class, 'update'])->name('googlemaps.update');

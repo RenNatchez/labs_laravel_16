@@ -46,25 +46,25 @@
                 <li class="active"><a href="/">Home</a></li>
                 <li><a href="{{route('services')}}">Services</a></li>
                 <li><a href="blog.html">Blog</a></li>
-                <li><a href="contact.html">Contact</a></li>
+                <li><a href="{{route('contact')}}">Contact</a></li>
                 @break
                 @case('Services')
                 <li><a href="/">Home</a></li>
                 <li class="active"><a href="{{route('services')}}">Services</a></li>
                 <li><a href="blog.html">Blog</a></li>
-                <li><a href="contact.html">Contact</a></li>
+                <li><a href="{{route('contact')}}">Contact</a></li>
                 @break
                 @case('Blog')
                 <li><a href="/">Home</a></li>
                 <li><a href="{{route('services')}}">Services</a></li>
                 <li class="active"><a href="blog.html">Blog</a></li>
-                <li><a href="contact.html">Contact</a></li>
+                <li><a href="{{route('contact')}}">Contact</a></li>
                 @break
-                @case('contact')
+                @case('Contact')
                 <li><a href="/">Home</a></li>
                 <li><a href="{{route('services')}}">Services</a></li>
                 <li><a href="blog.html">Blog</a></li>
-                <li class="active"><a href="contact.html">Contact</a></li>
+                <li class="active"><a href="{{route('contact')}}">Contact</a></li>
                 @break
                 @default
 
@@ -86,6 +86,9 @@
     <script src="{{asset('assets/js/owl.carousel.min.js')}}"></script>
     <script src="{{asset('assets/js/circle-progress.min.js')}}"></script>
     <script src="{{asset('assets/js/main.js')}}"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB0YyDTa0qqOjIerob2VTIwo_XVMhrruxo"></script>
+    <script src="{{asset('assets/js/map.js')}}"></script>
+    <script src="{{asset('/js/googlemaps.js')}}"></script>
 </body>
 
 </html>

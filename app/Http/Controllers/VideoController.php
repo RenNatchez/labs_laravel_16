@@ -35,6 +35,5 @@ class VideoController extends Controller
         public function show(Video $id){
             $video = $id;
             return view('admin.pages.video.show', compact('video'));
-        }
-    
+    }
 }
