@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 use App\Models\Carousel;
+use App\Models\Subject;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -21,6 +22,7 @@ class DatabaseSeeder extends Seeder
             CarouselSeeder::class,
             VideoSeeder::class,
             TestimonialSeeder::class,
+            SubjectSeeder::class,
         ]);
 
     }

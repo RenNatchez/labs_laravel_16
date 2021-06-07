@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\CarouselController;
+use App\Http\Controllers\ContactController;
 use App\Http\Controllers\FrontendControllers;
 use App\Http\Controllers\ServiceController;
 use App\Http\Controllers\TESTController;
@@ -22,6 +23,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 Route::get('/', [FrontendControllers::class, 'home'])->name('home');
+Route::get('/services', [FrontendControllers::class, 'services'])->name('services');
 
 
 Route::get('/dashboard', function () {
@@ -58,10 +60,17 @@ Route::put('/admin/video/{id}', [VideoController::class, 'update'])->name('video
 Route::get('/admin/video/{id}/show', [VideoController::class, 'show'])->name('video.show');
 
 
-// Video
+// Testimonial
 Route::get('/admin/testimonial', [TestimonialController::class, 'index'])->name('testimonial.index');
 Route::get('admin/testimonial/create', [TestimonialController::class, 'create'])->name('testimonial.create');
 Route::post('admin/testimonial/store', [TestimonialController::class, 'store'])->name('testimonial.store');
 Route::delete('/admin/testimonial/{id}/destroy', [TestimonialController::class, 'destroy'])->name('testimonial.destroy');
 Route::get('/admin/testimonial/{id}/edit', [TestimonialController::class, 'edit'])->name('testimonial.edit');
 Route::put('/admin/testimonial/{id}', [TestimonialController::class, 'update'])->name('testimonial.update');
+
+//Mail
+Route::post('/mail', [FrontendControllers::class, 'mailling'])->name('mail');
+
+// Contact
+Route::get('/admin/contact', [ContactController::class, 'index'])->name('contact.index');
+Route::delete('/admin/Contact/{id}/destroy', [ContactController::class, 'destroy'])->name('contact.destroy');

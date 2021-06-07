@@ -5,4 +5,5 @@
 @include('front-end.components.testimonial')
 @include('front-end.components.section2')
 @include('front-end.components.section3')
+@include('front-end.components.contact')
 @endsection
