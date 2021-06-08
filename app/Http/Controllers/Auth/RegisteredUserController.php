@@ -40,7 +40,7 @@ class RegisteredUserController extends Controller
             'prenom' => 'required|string|max:255',
             'description' => 'required|string|max:255',
             'photo' => 'required',
-            // 'poste_id' => 'required',
+            'poste_id' => 'required',
             'email' => 'required|string|email|max:255|unique:users',
             'password' => ['required', 'confirmed', Rules\Password::defaults()],
         ]);
@@ -52,6 +52,7 @@ class RegisteredUserController extends Controller
             'email' => $request->email,
             $request->file('photo')->storePublicly('image/', 'public'),
             'photo' => $request->file('photo')->hashName(),
+            'validate'=> false,
             'poste_id' => 3,
             'role_id' => 4,
             'password' => Hash::make($request->password),

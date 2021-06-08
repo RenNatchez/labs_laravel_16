@@ -25,7 +25,10 @@ class DatabaseSeeder extends Seeder
             SubjectSeeder::class,
             RoleSeeder::class,
             PosteSeeder::class,
+            GooglemapsSeeder::class,
+            TagSeeder::class,
+            CategorieSeeder::class,
+            UserSeeder::class,
         ]);
-
     }
 }

@@ -25,10 +25,10 @@ class PosteSeeder extends Seeder
             ['nom' =>"Employé",
             'created_at'=>now()],
             // 4
-            ['nom' =>"Secrétaire",
+            ['nom' =>"Développeur Web",
             'created_at'=>now()],
             // 5
-            ['nom' =>"Développeur Web",
+            ['nom' =>"Autre",
             'created_at'=>now()],
         ]);
     }

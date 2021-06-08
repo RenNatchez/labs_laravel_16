@@ -25,6 +25,7 @@ class User extends Authenticatable
         'poste_id',
         'role_id',
         'password',
+        'validate'
     ];
 
     /**

@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\BackController;
 use App\Http\Controllers\CarouselController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\FrontendControllers;
@@ -31,10 +32,8 @@ Route::get('/services', [FrontendControllers::class, 'services'])->name('service
 Route::get('/contact', [FrontendControllers::class, 'contact'])->name('contact');
 Route::get('/blog', [FrontendControllers::class, 'blog'])->name('blog');
 
+Route::get('/dashboard', [BackController::class, 'dashboard'])->middleware(['auth'])->name('dashboard');
 
-Route::get('/dashboard', function () {
-    return view('admin.dashboard');
-})->middleware(['auth'])->name('dashboard');
 
 require __DIR__.'/auth.php';
 

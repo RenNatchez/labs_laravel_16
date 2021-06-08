@@ -78,9 +78,9 @@
                                         </label>
                                         <input type="file" class="hidden" id="photo" name="photo" >
                                     </div>
-                        
                                 </div>
                             </div>
+                        </form>
                     </div>
                     <div class="pt-5 flex justify-between my-3">
                         <div class="flex items-center justify-end mt-4">
