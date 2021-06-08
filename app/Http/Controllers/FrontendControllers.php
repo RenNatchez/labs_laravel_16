@@ -4,13 +4,16 @@ namespace App\Http\Controllers;
 
 use App\Mail\MailSender;
 use App\Mail\NewsletterSender;
+use App\Models\blog;
 use App\Models\Carousel;
+use App\Models\Categorie;
 use App\Models\Contact;
 use App\Models\Googlemaps;
 use App\Models\Icone;
 use App\Models\Newsletter;
 use App\Models\Service;
 use App\Models\Subject;
+use App\Models\Tag;
 use App\Models\Testimonial;
 use App\Models\Video;
 use Database\Seeders\NewsletterSeeder;
@@ -80,7 +83,10 @@ class FrontendControllers extends Controller
     public function blog()
     {
         $currentpage = 'Blog';
-        return view('front-end.pages.blog',compact('currentpage'));
+        $blog = blog::paginate(3);
+        $tags = Tag::all(); 
+        $categorie = Categorie::all(); 
+        return view('front-end.pages.blog',compact('currentpage','blog','tags','categorie'));
     }
     
 }

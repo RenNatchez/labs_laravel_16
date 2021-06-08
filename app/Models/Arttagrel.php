@@ -5,11 +5,8 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Tag extends Model
+class Arttagrel extends Model
 {
     use HasFactory;
-
-    public function article(){
-        return $this->belongsToMany(Article::class, 'blogtags', 'tag_id'); 
-    }
+    protected $table = "arttagrel"; 
 }
