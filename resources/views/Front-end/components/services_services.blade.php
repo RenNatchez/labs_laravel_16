@@ -21,8 +21,10 @@
                 <h1>Aucun service a afficher</h1>
             @endforelse
             <div class="text-center">
-                {{ $serv_page->links("pagination::bootstrap-4") }}
             </div>            
         </div>
+    </div>
+    <div  class="text-center">
+        {{ $serv_page->links("pagination::bootstrap-4") }}
     </div>
 </div>

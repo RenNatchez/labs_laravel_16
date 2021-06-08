@@ -69,13 +69,18 @@ class FrontendControllers extends Controller
         $newsletter->save();
         return redirect()->back();
     }
-    // page services
+    // page contact
     public function contact()
     {
         $currentpage = 'Contact';
         $maps = Googlemaps::first();
         $subjects = Subject::all();
         return view('front-end.pages.contact',compact('currentpage','subjects','maps'));
+    }
+    public function blog()
+    {
+        $currentpage = 'Blog';
+        return view('front-end.pages.blog',compact('currentpage'));
     }
     
 }

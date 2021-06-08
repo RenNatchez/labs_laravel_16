@@ -19,9 +19,11 @@ class User extends Authenticatable
     protected $fillable = [
         'nom',
         'prenom',
+        'description',
         'email',
         'photo',
-        'description',
+        'poste_id',
+        'role_id',
         'password',
     ];
 
@@ -43,4 +45,11 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+    public function role() {
+        return $this->belongsTo(Role::class);
+    }
+    
+    public function poste() {
+        return $this->belongsTo(Poste::class);
+    }
 }

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
+use App\Models\Poste;
 use App\Models\User;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Auth\Events\Registered;
@@ -20,7 +21,8 @@ class RegisteredUserController extends Controller
      */
     public function create()
     {
-        return view('auth.register');
+        $poste = Poste::all();
+        return view('auth.register',compact('poste'));
     }
 
     /**
@@ -36,18 +38,22 @@ class RegisteredUserController extends Controller
         $request->validate([
             'nom' => 'required|string|max:255',
             'prenom' => 'required|string|max:255',
-            'email' => 'required|string|email|max:255|unique:users',
-            'photo' => 'required|string|max:255',
             'description' => 'required|string|max:255',
+            'photo' => 'required',
+            // 'poste_id' => 'required',
+            'email' => 'required|string|email|max:255|unique:users',
             'password' => ['required', 'confirmed', Rules\Password::defaults()],
         ]);
 
         $user = User::create([
             'nom' => $request->nom,
             'prenom' => $request->prenom,
-            'email' => $request->email,
-            'photo' => $request->photo,
             'description' => $request->description,
+            'email' => $request->email,
+            $request->file('photo')->storePublicly('image/', 'public'),
+            'photo' => $request->file('photo')->hashName(),
+            'poste_id' => 3,
+            'role_id' => 4,
             'password' => Hash::make($request->password),
         ]);
 

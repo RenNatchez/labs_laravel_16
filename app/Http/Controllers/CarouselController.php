@@ -50,13 +50,12 @@ class CarouselController extends Controller
             'image' => ["required"],
             'texte' => ["required"],
         ]);
-        $carousel = $id;
+            $carousel = $id;
             //STORAGE
             Storage::disk('public')->delete('image/'. $id->image);
             $request->file('image')->storePublicly('image/', 'public');
             $carousel->image = $request->file('image')->hashName();
                 //DB
-            $carousel->image = $request->file('image')->hashName();
             $carousel->texte = $request->texte;
             if ($request->start ==1) {
                 $carousel->start =  $request->start;

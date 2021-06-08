@@ -23,6 +23,8 @@ class DatabaseSeeder extends Seeder
             VideoSeeder::class,
             TestimonialSeeder::class,
             SubjectSeeder::class,
+            RoleSeeder::class,
+            PosteSeeder::class,
         ]);
 
     }

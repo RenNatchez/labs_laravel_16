@@ -45,25 +45,25 @@
                 @case('Home')
                 <li class="active"><a href="/">Home</a></li>
                 <li><a href="{{route('services')}}">Services</a></li>
-                <li><a href="blog.html">Blog</a></li>
+                <li><a href="{{route('blog')}}">Blog</a></li>
                 <li><a href="{{route('contact')}}">Contact</a></li>
                 @break
                 @case('Services')
                 <li><a href="/">Home</a></li>
                 <li class="active"><a href="{{route('services')}}">Services</a></li>
-                <li><a href="blog.html">Blog</a></li>
+                <li><a href="{{route('blog')}}">Blog</a></li>
                 <li><a href="{{route('contact')}}">Contact</a></li>
                 @break
                 @case('Blog')
                 <li><a href="/">Home</a></li>
                 <li><a href="{{route('services')}}">Services</a></li>
-                <li class="active"><a href="blog.html">Blog</a></li>
+                <li class="active"><a href="{{route('blog')}}">Blog</a></li>
                 <li><a href="{{route('contact')}}">Contact</a></li>
                 @break
                 @case('Contact')
                 <li><a href="/">Home</a></li>
                 <li><a href="{{route('services')}}">Services</a></li>
-                <li><a href="blog.html">Blog</a></li>
+                <li><a href="{{route('blog')}}">Blog</a></li>
                 <li class="active"><a href="{{route('contact')}}">Contact</a></li>
                 @break
                 @default

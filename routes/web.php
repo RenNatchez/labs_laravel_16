@@ -29,6 +29,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', [FrontendControllers::class, 'home'])->name('home');
 Route::get('/services', [FrontendControllers::class, 'services'])->name('services');
 Route::get('/contact', [FrontendControllers::class, 'contact'])->name('contact');
+Route::get('/blog', [FrontendControllers::class, 'blog'])->name('blog');
 
 
 Route::get('/dashboard', function () {

@@ -5,7 +5,7 @@ namespace Database\Seeders;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 
-class PosteSeeder extends Seeder
+class RoleSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -14,21 +14,18 @@ class PosteSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('postes')->insert([
+        DB::table('roles')->insert([
             // 1
-            ['nom' => 'CEO',
+            ['nom' => 'Admin',
             'created_at'=>now()],
             // 2
-            ['nom' => 'Directeur Artistique',
+            ['nom' => 'Web Master',
             'created_at'=>now()],
             // 3
-            ['nom' =>"Employé",
+            ['nom' =>"Rédacteur",
             'created_at'=>now()],
             // 4
-            ['nom' =>"Secrétaire",
-            'created_at'=>now()],
-            // 5
-            ['nom' =>"Développeur Web",
+            ['nom' =>"Membre",
             'created_at'=>now()],
         ]);
     }

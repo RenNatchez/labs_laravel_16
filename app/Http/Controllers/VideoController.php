@@ -27,7 +27,6 @@ class VideoController extends Controller
             $request->file('miniature')->storePublicly('image/', 'public');
             $video->miniature = $request->file('miniature')->hashName();
                 //DB
-            $video->miniature = $request->file('miniature')->hashName();
             $video->video = $request->video;
             $video->save();
             return redirect()->route('video.index');
