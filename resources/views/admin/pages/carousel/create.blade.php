@@ -39,6 +39,7 @@
                         name="texte" :value="old('texte')" />
                 </div>
             </div>
+            {{-- categorie --}}
             <div class="flex w-100 justify-end">
                 <button type="submit" class="mr-10 mt-10 bg_green px-16 py-2 text-lg shadow-sm font-semibold  tracking-wider text-gray-800 hover:text-white rounded-lg">Envoyer</button>
             </div>

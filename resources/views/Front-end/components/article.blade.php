@@ -2,7 +2,7 @@
     <!-- Post item -->
     <div class="post-item">
         <div class="post-thumbnail">
-            <img src="img/blog/blog-2.jpg" alt="">
+            <img src='{{ asset($item->image) }}' alt="">
             <div class="post-date">
                 <h2>{{$item->created_at->format('d')}}</h2>
                 <h3>{{$item->created_at->format('m')}}, {{$item->created_at->format('y')}}</h3>

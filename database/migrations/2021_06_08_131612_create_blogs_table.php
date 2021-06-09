@@ -17,6 +17,7 @@ class CreateBlogsTable extends Migration
             $table->id();
             $table->string('titre',100);
             $table->text('contenu');
+            $table->string('image');
             $table->string('validate');
             
             $table->unsignedBigInteger('user_id');

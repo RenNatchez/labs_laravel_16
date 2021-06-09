@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ArticlesController;
 use App\Http\Controllers\BackController;
 use App\Http\Controllers\CarouselController;
 use App\Http\Controllers\ContactController;
@@ -55,6 +56,15 @@ Route::post('admin/services/store', [ServiceController::class, 'store'])->name('
 Route::delete('/admin/services/{id}/destroy', [ServiceController::class, 'destroy'])->name('service.destroy');
 Route::get('/admin/services/{id}/edit', [ServiceController::class, 'edit'])->name('service.edit');
 Route::put('/admin/services/{id}', [ServiceController::class, 'update'])->name('service.update');
+
+
+// Services
+Route::get('/admin/articles', [ArticlesController::class, 'index'])->name('articles.index');
+Route::get('admin/articles/create', [ArticlesController::class, 'create'])->name('articles.create');
+Route::post('admin/serviarticlesces/store', [ArticlesController::class, 'store'])->name('articles.store');
+Route::delete('/admin/articles/{id}/destroy', [ArticlesController::class, 'destroy'])->name('articles.destroy');
+Route::get('/admin/articles/{id}/edit', [ArticlesController::class, 'edit'])->name('articles.edit');
+Route::put('/admin/articles/{id}', [ArticlesController::class, 'update'])->name('articles.update');
 
 
 
