@@ -51,7 +51,7 @@
                 </form>
             </div>
         </div>
-        <img class="pb-5" src='{{ asset($article->image) }}' alt="">
+        <img width="450" class="pb-5" src='{{ asset("image/blog/".$article->image) }}' alt="">
         <p class="text-gray-300 text-sm">{{$article->contenu}}</p>
     </div>
     @empty

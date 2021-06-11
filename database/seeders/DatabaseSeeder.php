@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Http\Controllers\ContenuController;
 use App\Models\Carousel;
 use App\Models\Subject;
 use Illuminate\Database\Seeder;
@@ -31,6 +32,7 @@ class DatabaseSeeder extends Seeder
             UserSeeder::class,
             BlogSeeder::class,
             BlogtagsSeeder::class,
+            ContenuSeeder::class,
         ]);
     }
 }

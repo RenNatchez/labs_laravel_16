@@ -2,7 +2,7 @@
     <!-- Post item -->
     <div class="post-item">
         <div class="post-thumbnail">
-            <img src='{{ asset($item->image) }}' alt="">
+            <img src='{{ asset('image/blog/'.$item->image) }}' alt="">
             <div class="post-date">
                 <h2>{{$item->created_at->format('d')}}</h2>
                 <h3>{{$item->created_at->format('m')}}, {{$item->created_at->format('y')}}</h3>
@@ -18,7 +18,7 @@
                 <a href="">2 Comments</a>
             </div>
             <p>{{Str::limit($item->contenu, 280, '...') }}</p>
-            <a href="blog-post.html" class="read-more">Read More</a>
+            <a href="{{route('blog.show', $item->id)}}" class="read-more">Read More</a>
         </div>
     </div>
 @endforeach

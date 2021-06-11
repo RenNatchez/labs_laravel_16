@@ -17,7 +17,7 @@ class BlogSeeder extends Seeder
         DB::table('blogs')->insert([
             [
                 "titre" => "Le Titre De L'Article 1", 
-                "image" => "image/blog/blog-1.jpg", 
+                "image" => "blog-1.jpg", 
                 "contenu" => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur leo est, feugiat nec elementum id,
                 suscipit id nulla. Phasellus vestibulum, quam tincidunt venenatis ultrices, est libero mattis ante, ac
                 consectetur diam neque eget quam. Etiam feugiat augue et varius blandit. Praesent mattis, eros a sodales
@@ -47,7 +47,7 @@ class BlogSeeder extends Seeder
             ],
             [
                 "titre" => "Le Titre De L'Article 2", 
-                "image" => "image/blog/blog-1.jpg", 
+                "image" => "blog-1.jpg", 
                 "contenu" => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur leo est, feugiat nec elementum id,
                 suscipit id nulla. Phasellus vestibulum, quam tincidunt venenatis ultrices, est libero mattis ante, ac
                 consectetur diam neque eget quam. Etiam feugiat augue et varius blandit. Praesent mattis, eros a sodales
@@ -77,7 +77,7 @@ class BlogSeeder extends Seeder
             ],
             [
                 "titre" => "Le Titre De L'Article 3",
-                "image" => "image/blog/blog-1.jpg", 
+                "image" => "blog-2.jpg", 
                 "contenu" => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur leo est, feugiat nec elementum id,
                 suscipit id nulla. Phasellus vestibulum, quam tincidunt venenatis ultrices, est libero mattis ante, ac
                 consectetur diam neque eget quam. Etiam feugiat augue et varius blandit. Praesent mattis, eros a sodales
@@ -107,7 +107,7 @@ class BlogSeeder extends Seeder
             ],
             [
                 "titre" => "Le Titre De L'Article 4",
-                "image" => "image/blog/blog-1.jpg", 
+                "image" => "blog-3.jpg", 
                 "contenu" => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur leo est, feugiat nec elementum id,
                 suscipit id nulla. Phasellus vestibulum, quam tincidunt venenatis ultrices, est libero mattis ante, ac
                 consectetur diam neque eget quam. Etiam feugiat augue et varius blandit. Praesent mattis, eros a sodales

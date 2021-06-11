@@ -63,7 +63,7 @@
                 <ul class="list-reset lg:flex flex-1 items-center px-4 md:px-0">
                     <li class="mr-6 my-2 md:my-0">
                         <a href="{{route('dashboard')}}"
-                            class="block py-1 md:py-3 pl-1 align-middle text-gray-500 no-underline hover:text-gray-100 border-b-2 border-gray-900  hover:border-green-400">
+                            class="block py-1 md:py-3 pl-1 align-middle text-gray-500 no-underline hover:text-gray-100 border-b-2 border-gray-900  hover:border-green-800">
                             <i class="fas fa-home fa-fw mr-3"></i><span class="pb-1 md:pb-0 text-sm">Home</span>
                         </a>
                     </li>
@@ -113,6 +113,12 @@
                         <a href="{{route('articles.index')}}"
                             class="block py-1 md:py-3 pl-1 align-middle text-gray-500 no-underline hover:text-gray-100 border-b-2 border-gray-900  hover:border-indigo-900">
                             <i class="fas fa-newspaper mr-3"></i><span class="pb-1 md:pb-0 text-sm">Articles</span>
+                        </a>
+                    </li>
+                    <li class="mr-6 my-2 md:my-0">
+                        <a href="{{route('contenu.index')}}"
+                            class="block py-1 md:py-3 pl-1 align-middle text-gray-500 no-underline hover:text-gray-100 border-b-2 border-gray-900  hover:border-green-200">
+                            <i class="fas fa-clone mr-3"></i><span class="pb-1 md:pb-0 text-sm">Contenus</span>
                         </a>
                     </li>
             </ul>

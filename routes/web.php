@@ -4,6 +4,7 @@ use App\Http\Controllers\ArticlesController;
 use App\Http\Controllers\BackController;
 use App\Http\Controllers\CarouselController;
 use App\Http\Controllers\ContactController;
+use App\Http\Controllers\ContenuController;
 use App\Http\Controllers\FrontendControllers;
 use App\Http\Controllers\GooglemapsController;
 use App\Http\Controllers\NewsletterController;
@@ -33,6 +34,8 @@ Route::get('/services', [FrontendControllers::class, 'services'])->name('service
 Route::get('/contact', [FrontendControllers::class, 'contact'])->name('contact');
 Route::get('/blog', [FrontendControllers::class, 'blog'])->name('blog');
 
+Route::get('/blog/post/{id}', [FrontendControllers::class, 'blogshow'])->name('blog.show'); 
+Route::post('/blog/post/addcomment/{article}', [FrontendControllers::class, 'addcomment'])->name('blog.addcom'); 
 Route::get('/dashboard', [BackController::class, 'dashboard'])->middleware(['auth'])->name('dashboard');
 
 
@@ -48,6 +51,13 @@ Route::delete('/admin/carousel/{id}/destroy', [CarouselController::class, 'destr
 Route::get('/admin/carousel/{id}/edit', [CarouselController::class, 'edit'])->name('carousel.edit');
 Route::put('/admin/carousel/{id}', [CarouselController::class, 'update'])->name('carousel.update');
 
+// Contenus
+Route::get('/admin/contenus', [ContenuController::class, 'index'])->name('contenu.index');
+Route::get('/admin/contenus/site', [ContenuController::class, 'updatesite'])->name('contenu.update.site');
+Route::put('/admin/contenu/site', [ContenuController::class, 'editsite'])->name('contenu.edit.site');
+Route::get('/admin/contenus/contact', [ContenuController::class, 'updatecontact'])->name('contenu.update.contact');
+Route::put('/admin/contenu/contact', [ContenuController::class, 'editcontact'])->name('contenu.edit.contact');
+
 
 // Services
 Route::get('/admin/services', [ServiceController::class, 'index'])->name('service.index');
@@ -58,7 +68,7 @@ Route::get('/admin/services/{id}/edit', [ServiceController::class, 'edit'])->nam
 Route::put('/admin/services/{id}', [ServiceController::class, 'update'])->name('service.update');
 
 
-// Services
+// articles
 Route::get('/admin/articles', [ArticlesController::class, 'index'])->name('articles.index');
 Route::get('admin/articles/create', [ArticlesController::class, 'create'])->name('articles.create');
 Route::post('admin/serviarticlesces/store', [ArticlesController::class, 'store'])->name('articles.store');

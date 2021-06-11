@@ -1,7 +1,7 @@
-<div class="services-section spad">
+<div class="services-section spad"  id="ancre">
     <div class="container">
         <div class="section-title dark">
-            <h2>Get in <span>the Lab</span> and see the services</h2>
+            <h2>{!!$titre3!!}</h2>
         </div>
         <div class="row">
             @forelse ($serv_random2 as $serv)
@@ -22,7 +22,7 @@
             @endforelse
         </div>
         <div class="text-center">
-            <a href="" class="site-btn">BrA FAIRE FGFGHHHGFJFGFDGHFHHFHFGJHJGHFHJFowse</a>
+            <a href="{{route('services')}}" class="site-btn">Ready</a>
         </div>
     </div>
 </div>

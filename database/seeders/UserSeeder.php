@@ -24,7 +24,7 @@ class UserSeeder extends Seeder
                 'validate' => false,
                 'email' => 'natchez@hotmail.com',
                 'photo' => '1.png',
-                'poste_id' => 5,
+                'poste_id' => 1,
                 'role_id' => 1,
                 'password' => Hash::make('password'),
                 'created_at'=>now()

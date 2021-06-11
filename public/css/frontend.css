@@ -10,6 +10,12 @@
     color: gray;
     font-family: "Roboto", sans-serif;
 }
+.w-memb-card{
+    height: 51rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
 .text_green{
     color: #2edeaa !important;
 }
