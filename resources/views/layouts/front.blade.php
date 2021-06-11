@@ -8,18 +8,16 @@
     <meta name="keywords" content="lab, onepage, creative, html">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Favicon -->
-    <link href="img/favicon.ico" rel="shortcut icon" />
+    <link href="{{asset('image/favicon.ico')}}" rel="shortcut icon" />
     <!-- Google Fonts -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css">
-
     <link href="https://fonts.googleapis.com/css?family=Oswald:300,400,500,700|Roboto:300,400,700" rel="stylesheet">
     <!-- Stylesheets -->
-    <link rel="stylesheet" href="{{asset('assets/css/magnific-popup.css')}}" />
-    <link rel="stylesheet" href="{{asset('assets/css/flaticon.css')}}" />
-    <link rel="stylesheet" href="{{asset('assets/css/owl.carousel.css')}}" />
-    <link rel="stylesheet" href="{{asset('assets/css/style.css')}}" />
     <link rel="stylesheet" href="{{asset('assets/css/bootstrap.min.css')}}" />
+    <link rel="stylesheet" href="{{asset('assets/css/style.css')}}" />
     <link rel="stylesheet" href="{{asset('assets/css/font-awesome.min.css')}}" />
+    <link rel="stylesheet" href="{{asset('assets/css/magnific-popup.css')}}" />
+    <link rel="stylesheet" href="{{asset('assets/css/owl.carousel.css')}}" />
     <link rel="stylesheet" href="{{asset('css/frontend.css')}}" />
 </head>
 

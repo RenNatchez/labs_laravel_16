@@ -90,6 +90,81 @@ class ServiceSeeder extends Seeder
             'description' =>'Lorem ipsum dolor sit amet, consectetu rfdfi jisqhdihd sid dfijdfjhgi dsfuidsqi udfspids ip^',
             'icone_id' =>2,
             'created_at'=>now()],
+            // 16
+            ['titre' => 'serv 16', 
+            'description' =>'Lorem ipsum dolor sit amet, consectetu rfdfi jisqhdihd sid dfijdfjhgi dsfuidsqi udfspids ip^',
+            'icone_id' =>4,
+            'created_at'=>now()],
+            // 17
+            ['titre' => 'serv 17',
+            'description' =>'Lorem ipsum dolor sit amet, consectetu rfdfi jisqhdihd sid dfijdfjhgi dsfuidsqi udfspids ip^',
+            'icone_id' =>5,
+            'created_at'=>now()],
+            // 18
+            ['titre' => 'serv 18',
+            'description' =>'Lorem ipsum dolor sit amet, consectetu rfdfi jisqhdihd sid dfijdfjhgi dsfuidsqi udfspids ip^',
+            'icone_id' =>6,
+            'created_at'=>now()],
+            // 19
+            ['titre' => 'serv 19',
+            'description' =>'Lorem ipsum dolor sit amet, consectetu rfdfi jisqhdihd sid dfijdfjhgi dsfuidsqi udfspids ip^',
+            'icone_id' =>1,
+            'created_at'=>now()],
+            // 20
+            ['titre' => 'serv 20',
+            'description' =>'Lorem ipsum dolor sit amet, consectetu rfdfi jisqhdihd sid dfijdfjhgi dsfuidsqi udfspids ip^',
+            'icone_id' =>2,
+            'created_at'=>now()],
+            // 21
+            ['titre' => 'serv 21',
+            'description' =>'Lorem ipsum dolor sit amet, consectetu rfdfi jisqhdihd sid dfijdfjhgi dsfuidsqi udfspids ip^',
+            'icone_id' =>4,
+            'created_at'=>now()],
+            // 22
+            ['titre' => 'serv 22',
+            'description' =>'Lorem ipsum dolor sit amet, consectetu rfdfi jisqhdihd sid dfijdfjhgi dsfuidsqi udfspids ip^',
+            'icone_id' =>5,
+            'created_at'=>now()],
+            // 23
+            ['titre' => 'serv 22',
+            'description' =>'Lorem ipsum dolor sit amet, consectetu rfdfi jisqhdihd sid dfijdfjhgi dsfuidsqi udfspids ip^',
+            'icone_id' =>6,
+            'created_at'=>now()],
+            // 24
+            ['titre' => 'serv 23',
+            'description' =>'Lorem ipsum dolor sit amet, consectetu rfdfi jisqhdihd sid dfijdfjhgi dsfuidsqi udfspids ip^',
+            'icone_id' =>1,
+            'created_at'=>now()],
+            // 25
+            ['titre' => 'serv 24',
+            'description' =>'Lorem ipsum dolor sit amet, consectetu rfdfi jisqhdihd sid dfijdfjhgi dsfuidsqi udfspids ip^',
+            'icone_id' =>2,
+            'created_at'=>now()],
+            // 26
+            ['titre' => 'serv 25',
+            'description' =>'Lorem ipsum dolor sit amet, consectetu rfdfi jisqhdihd sid dfijdfjhgi dsfuidsqi udfspids ip^',
+            'icone_id' =>4,
+            'created_at'=>now()],
+            // 27
+            ['titre' => 'serv 26',
+            'description' =>'Lorem ipsum dolor sit amet, consectetu rfdfi jisqhdihd sid dfijdfjhgi dsfuidsqi udfspids ip^',
+            'icone_id' =>5,
+            'created_at'=>now()],
+            // 28
+            ['titre' => 'serv 27',
+            'description' =>'Lorem ipsum dolor sit amet, consectetu rfdfi jisqhdihd sid dfijdfjhgi dsfuidsqi udfspids ip^',
+            'icone_id' =>6,
+            'created_at'=>now()],
+            // 29
+            ['titre' => 'serv 28',
+            'description' =>'Lorem ipsum dolor sit amet, consectetu rfdfi jisqhdihd sid dfijdfjhgi dsfuidsqi udfspids ip^',
+            'icone_id' =>1,
+            'created_at'=>now()],
+            // 30
+            ['titre' => 'serv 29',
+            'description' =>'Lorem ipsum dolor sit amet, consectetu rfdfi jisqhdihd sid dfijdfjhgi dsfuidsqi udfspids ip^',
+            'icone_id' =>2,
+            'created_at'=>now()],
 
         ]);
     }

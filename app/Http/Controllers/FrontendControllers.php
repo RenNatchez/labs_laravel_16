@@ -52,6 +52,7 @@ class FrontendControllers extends Controller
         $subjects = Subject::all();
         $testi_last = $testimonials->sortByDesc('created_at')->take(6);
         $serv_random = $services->random(3);
+        $serv_random2 = $services->random(9);
         $user_random = $user->random(2);
         $ceo = User::where('poste_id', '1')->get();
         $ceo_count = $ceo->count();
@@ -60,8 +61,7 @@ class FrontendControllers extends Controller
         } else {
             $centre = $ceo->random(1);
         };
-        
-        $serv_random2 = $services->random(9);
+    
         return view('home',compact('contenu','titre1','titre2','titre3','titre4','titre5','centre','user_random','ceo','carousels','serv_random','video','currentpage','serv_random2','testi_last','subjects'));
     }
     public function mailling (Request $request)
@@ -125,7 +125,7 @@ class FrontendControllers extends Controller
     public function blog()
     {
         $currentpage = 'Blog';
-        $blog = blog::orderByDesc('id')->paginate(3);
+        $blog = blog::orderByDesc('id')->where('validate',1)->paginate(3);
         $tags = Tag::all(); 
         $categorie = Categorie::all(); 
         return view('front-end.pages.blog',compact('currentpage','blog','tags','categorie'));

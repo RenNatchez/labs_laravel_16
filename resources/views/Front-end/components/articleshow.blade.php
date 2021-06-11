@@ -13,7 +13,7 @@
             @foreach ($article->tags as $tag)
             <a href="">{{$tag->nom}}</a>
             @endforeach
-            <a href="">2 Comments</a>
+            <a href="">{{count($article->comments)}} Comments</a>
         </div>
         <p>{{$article->contenu}}</p>
     </div>

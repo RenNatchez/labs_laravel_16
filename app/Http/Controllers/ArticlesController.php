@@ -86,12 +86,15 @@ class ArticlesController extends Controller
         foreach ($oldtag as $item) {
             $item->delete();
         }
-        foreach ($request->tags as $item) {
-            $tag =  new Blogtags();
-            $tag->tag_id = $item;
-            $tag->blog_id = $article->id;
-            $tag->save();
-        };
+        if ($request->tags == 0) {
+        } else {
+            foreach ($request->tags as $item) {
+                $tag =  new Blogtags();
+                $tag->tag_id = $item;
+                $tag->blog_id = $article->id;
+                $tag->save();
+            };
+        }
         return redirect()->route('articles.index');
     }
 
