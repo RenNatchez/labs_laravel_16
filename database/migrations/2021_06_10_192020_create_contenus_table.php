@@ -27,7 +27,7 @@ class CreateContenusTable extends Migration
             $table->string('description_3',100);
             $table->string('contact_titre',25);
             $table->string('contact_description',250);
-            $table->string('contact_soustitre',15);
+            $table->string('contact_soustitre',25);
             $table->string('contact_rue',100);
             $table->string('contact_ville',100);
             $table->string('contact_telephone',25);

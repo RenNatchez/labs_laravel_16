@@ -40,7 +40,8 @@ class BlogSeeder extends Seeder
                 suscipit id nulla. Phasellus vestibulum, quam tincidunt venenatis ultrices, est libero mattis ante, ac
                 consectetur diam neque eget quam. Etiam feugiat augue et varius blandit. Praesent mattis, eros a sodales
                 commodo.',
-                "validate" => 1,
+                "validate" => 0,
+                "delete" => 0,
                 "user_id" => 1,
                 "categorie_id" => 2,
                 "created_at" => now()
@@ -71,6 +72,7 @@ class BlogSeeder extends Seeder
                 consectetur diam neque eget quam. Etiam feugiat augue et varius blandit. Praesent mattis, eros a sodales
                 commodo.',
                 "validate" => 0,
+                "delete" => 0,
                 "user_id" => 1,
                 "categorie_id" => 2,
                 "created_at" => now()
@@ -100,7 +102,8 @@ class BlogSeeder extends Seeder
                 suscipit id nulla. Phasellus vestibulum, quam tincidunt venenatis ultrices, est libero mattis ante, ac
                 consectetur diam neque eget quam. Etiam feugiat augue et varius blandit. Praesent mattis, eros a sodales
                 commodo.',
-                "validate" => 1,
+                "validate" => 0,
+                "delete" => 0,
                 "user_id" => 2,
                 "categorie_id" => 2,
                 "created_at" => now()
@@ -130,7 +133,8 @@ class BlogSeeder extends Seeder
                 suscipit id nulla. Phasellus vestibulum, quam tincidunt venenatis ultrices, est libero mattis ante, ac
                 consectetur diam neque eget quam. Etiam feugiat augue et varius blandit. Praesent mattis, eros a sodales
                 commodo.',
-                "validate" => 1,
+                "validate" => 0,
+                "delete" => 0,
                 "user_id" => 1,
                 "categorie_id" => 2,
                 "created_at" => now()

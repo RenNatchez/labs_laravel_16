@@ -29,14 +29,18 @@
                         <i class="fas fa-cloud-upload-alt text-5xl" style="user-select: auto;"></i>
                         <h2 class="text-xl">Sélectionner une photo</h2>
                     </label>
-                    <input type="file" class="hidden" id="image" name="image">
+                    <input type="file" class="hidden" id="image" name="image" required>
                 </div>
                 <div class="sm:w-5/12 flex flex-col">
                     <div class="w-12/12  my-6 border-b-2 border-green-400">
                         <x-label for="titre" />
                         <x-input placeholder='Entrer votre titre' id="titre"
-                            class="block mt-1 w-full bg-gray-800 text_input py-3 pl-3" type="titre" name="titre" />
-                    </div>
+                            class="@error('titre') is-invalid @enderror block mt-1 w-full bg-gray-800 text_input py-3 pl-3" type="titre" name="titre" required/>
+                            @error('titre')
+                                <span class="feedback-invalid text-red-700">{{$message}}</span>
+                            @enderror
+
+                        </div>
                     <div class="w-12/12  my-6 border-b-2 border-green-400">
                         <x-label for="categorie" />
                         <select name="categorie" class="w-full h-11 pl-3 pr-6 text_input border-none bg-gray-800 rounded-lg  focus:shadow-outline" placeholder="categorie">
@@ -50,8 +54,12 @@
             <div class="my-2 border-b-2 border-green-400">
                 <x-label for="contenu" />
                 <textarea placeholder='Contenu' id="contenu" style="height: 150px;"
-                    class=" mt-1 w-full bg-gray-800 border-none text_input rounded-lg"
+                    class=" mt-1 w-full bg-gray-800 border-none text_input rounded-lg @error('contenu') is-invalid @enderror" 
                     type="text" name="contenu" required></textarea>
+                    @error('contenu')
+                    <span class="feedback-invalid text-red-700">{{$message}}</span>
+                @enderror
+
                 </div>
                 {{-- checkbox --}}
                 <div class="flex items-center pt-10 form-group">

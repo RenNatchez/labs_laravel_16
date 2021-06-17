@@ -13,7 +13,7 @@
             @foreach ($article->tags as $tag)
             <a href="">{{$tag->nom}}</a>
             @endforeach
-            <a href="">{{count($article->comments)}} Comments</a>
+            <a href="">{{count($article->comments->where('valide',1))}} Comments</a>
         </div>
         <p>{{$article->contenu}}</p>
     </div>
@@ -29,19 +29,17 @@
     </div>
     <!-- Post Comments -->
     <div class="comments">
-        <h2>Comments ({{count($article->comments)}})</h2>
+        <h2>Comments ({{count($article->comments->where('valide',1))}})</h2>
         <ul class="comment-list">
-            @foreach ($article->comments as $comment)
+            @foreach ($article->comments->where('valide',1) as $comment)
             <li>
-                <div class="avatar">
-                </div>
                 <div class="commetn-text">
                     <h3>{{$comment->auteur}} | {{$comment->created_at->format('d')}} {{$comment->created_at->format('m')}}, {{$comment->created_at->format('y')}}</h3>
                     <p>{{$comment->message}}</p>
                 </div>
             </li>
+            @endforeach
         </ul>
-        @endforeach
     </div>
     <!-- Commert Form -->
     @include('Front-end.components.formcomment')

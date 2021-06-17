@@ -20,7 +20,7 @@
     <hr class="border-b-2 border-gray-600 my-3">
     {{-- header end --}}
     {{-- card --}}
-    @forelse ($articles as $article)
+    @forelse ($articles->where('delete',0) as $article)
     <div class="p-3 w-11/12 sm:w-full my-5 mx-auto bg-gray-900 rounded-lg">
         <div class="flex">
             <div class="w-3/4 sm:1/2">

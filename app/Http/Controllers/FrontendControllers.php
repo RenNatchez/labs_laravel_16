@@ -20,6 +20,7 @@ use App\Models\Tag;
 use App\Models\Testimonial;
 use App\Models\User;
 use App\Models\Video;
+use Illuminate\Support\Str;
 use Database\Seeders\NewsletterSeeder;
 use Illuminate\Http\Request;
 use Illuminate\Support\Arr;
@@ -44,7 +45,7 @@ class FrontendControllers extends Controller
         $titre3  = str_replace($parenthese,$span, $titre_3);
         $titre4  = str_replace($parenthese,$span, $titre_4);
         $titre5  = str_replace($parenthese,$span, $titre_5);
-        $user = User::where('poste_id','>', '1')->get();
+        $user = User::where('poste_id','>', '1')->where('validate',1)->get();
         $carousels = Carousel::all();
         $services = Service::all();
         $testimonials = Testimonial::all();
@@ -94,7 +95,7 @@ class FrontendControllers extends Controller
         $carousels = Carousel::all();
         $services = Service::all();
         $subjects = Subject::all();
-        $blog = blog::orderByDesc('id')->paginate(3);
+        $blog = blog::orderByDesc('id')->where('validate',1)->paginate(3);
         $serv_random = $services->sortByDesc('created_at')->take(6)->slice(0,3);
         $serv_random2 = $services->sortByDesc('created_at')->take(6)->slice(3,5);
         $serv_page = Service::orderByDesc('id')->paginate(9)->fragment('services');
@@ -133,11 +134,10 @@ class FrontendControllers extends Controller
     public function blogshow(blog $id)
     {
         $currentpage = 'Blog';
-
         $article = $id;
         $tags = Tag::all(); 
         $categorie = Categorie::all(); 
-        $comment = Comments::all(); 
+        $comment = Comments::all()->where('valide',1); 
         return view('front-end.pages.blogshow',compact('currentpage','tags','categorie','article','comment'));
     }
     public function addcomment (Request $request, blog $article)
@@ -155,6 +155,56 @@ class FrontendControllers extends Controller
         $link->save();
 
         return redirect()->back();
+    }
+    public function categorie(Categorie $id)
+    {
+        $currentpage = 'Blog';
+        $article = $id;
+        $tags = Tag::all(); 
+        $categorie = Categorie::all(); 
+        $comment = Comments::all()->where('valide',1); 
+        // headerpage
+        $url =  url()->current();
+        $urlCurrent = Str::afterLast($url, '/');
+        $ref = $id;
+        //selection categorie
+        $blog = blog::orderByDesc('id')->where('categorie_id',$ref->id)->where('validate',1)->where('delete',0)->paginate(3);
+
+
+        return view('front-end.pages.blogcate', compact('url','currentpage', 'urlCurrent','blog', 'categorie', 'tags'));
+    }
+    public function tag(tag $id)
+    {
+        $currentpage = 'Blog';
+        $article = $id;
+        $tags = Tag::all(); 
+        $categorie = Categorie::all(); 
+        $comment = Comments::all()->where('valide',1); 
+        // headerpage
+        $url =  url()->current();
+        $urlCurrent = Str::afterLast($url, '/');
+        $ref = $id;
+        //selection categorie
+        $blog = blog::orderByDesc('id')->paginate(3);
+
+
+        return view('front-end.pages.blogtag', compact('url','currentpage','ref', 'urlCurrent','blog', 'categorie', 'tags','article'));
+    }
+    public function search(Request $request)
+    {
+        request()->validate([
+            "article" => "required",
+        ]);
+        $currentpage = 'Blog';
+        $q = $request->article;
+        $blog = blog::orderByDesc('id')->where('validate',1)->where('titre', 'LIKE', "%{$q}%")->paginate(3);
+        // return dd($articles[0]->categorie->nom);
+
+        //sidebar
+        $categorie = Categorie::all();
+        $tags = Tag::all();
+
+        return view('front-end.pages.blogsearch', compact('blog', 'categorie','currentpage', 'tags'));
     }
 
 }

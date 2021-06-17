@@ -24,19 +24,24 @@
             class="d-flex flex-column align-items-center my-5">
             @csrf
             <div class="form-group">
-                <label for="image"
+                <label for="image" 
                     class="w-11/12 sm:w-full m-auto h-32 flex flex-col items-center justify-center px-4 py-6 bg_green text-gray-800 rounded-lg shadow-lg tracking-wide uppercase border border-green-700 cursor-pointer hover:text-white">
                     <i class="fas fa-cloud-upload-alt text-5xl" style="user-select: auto;"></i>
-                    <h2 class="text-xl">Sélectionner une photo</h2>
+                    <h2 class="text-xl">Sélectionner une photo</h2 >
                 </label>
-                <input type="file" class="hidden" id="image" name="image" >
+                <input type="file" class="hidden" id="image" name="image" required>
             </div>
             <!-- Name -->
             <div class="w-11/12 sm:w-full my-6 mx-auto border-b-2 border-green-400">
                     <x-label for="texte" />
                     <x-input placeholder='Entrer votre texte' id="texte"
                         class="block mt-1 w-full bg-gray-800 text_input py-3" type="texte"
-                        name="texte" :value="old('texte')" />
+                        name="texte" :value="old('texte')" required/>
+                        @error('texte')
+                        <span class="feedback-invalid text-red-700">{{$message}}</span>
+                    @enderror
+
+
                 </div>
             </div>
             {{-- categorie --}}

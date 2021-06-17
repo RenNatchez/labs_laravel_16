@@ -23,7 +23,7 @@ class TestimonialController extends Controller
             'photo' => ["required"],
             'prenom' => ["required"],
             'poste' => ["required"],
-            'avis' => ["required"],
+            'avis' => ["required",'max:175'],
         ]);
         //STORAGE classique via input FILE
         $testimonial = new Testimonial();
@@ -52,7 +52,7 @@ class TestimonialController extends Controller
                 'photo' => ["required"],
                 'prenom' => ["required"],
                 'poste' => ["required"],
-                'avis' => ["required"],
+                'avis' => ["required",'max:175'],
             ]);
             $testimonial = $id;
             //STORAGE

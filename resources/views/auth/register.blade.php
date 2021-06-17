@@ -14,7 +14,7 @@
                     <div class="py-5">
                         <!-- Validation Errors -->
                         <x-auth-validation-errors class="mb-4" :errors="$errors" />
-                        <form method="POST" action="{{ route('register') }}"  enctype="multipart/form-data">
+                        <form method="POST" action="{{ route('register') }}" enctype="multipart/form-data">
                             @csrf
                             <div class="flex justify-around my-3">
                                 <div class="w-5/12">
@@ -64,8 +64,9 @@
                                     </div>
                                     {{-- photo --}}
                                     <div class="my-2">
-                                        <x-label for="photo" />
-                                        <select name="poste_id" id="poste_id" class="rounded-lg  block mt-1 w-full bg-gray-800 border-gray-500 text_input">
+                                        <x-label for="poste_id" />
+                                        <select name="poste_id" id="poste_id"
+                                            class="rounded-lg  block mt-1 w-full bg-gray-800 border-gray-500 text_input">
                                             @foreach ($poste as $item)
                                             <option value="{{$item->id}}">{{$item->nom}}</option>
                                             @endforeach
@@ -76,11 +77,10 @@
                                             class=" sm:w-full m-auto h-10 flex flex-col items-center justify-center px-4 bg_green text-gray-800 rounded-lg shadow-lg tracking-wide uppercase border border-green-700 cursor-pointer hover:text-white">
                                             <h2 class="text-xs">Sélectionner une photo</h2>
                                         </label>
-                                        <input type="file" class="hidden" id="photo" name="photo" >
+                                        <input type="file" class="hidden" id="photo" name="photo">
                                     </div>
                                 </div>
                             </div>
-                        </form>
                     </div>
                     <div class="pt-5 flex justify-between my-3">
                         <div class="flex items-center justify-end mt-4">

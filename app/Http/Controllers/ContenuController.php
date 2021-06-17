@@ -17,16 +17,16 @@ class ContenuController extends Controller
     }
     public function editsite(Contenu $id, Request $request){
         request()->validate([
-            'titre_1' => ["required"],
-            'titre_2' => ["required"],
-            'titre_3' => ["required"],
-            'titre_4' => ["required"],
-            'titre_5' => ["required"],
-            'titre_6' => ["required"],
-            'titre_7' => ["required"],
-            'description_1' => ["required"],
-            'description_2' => ["required"],
-            'description_3' => ["required"],
+            'titre_1' => ["required",'max:125'],
+            'titre_2' => ["required",'max:125'],
+            'titre_3' => ["required",'max:125'],
+            'titre_4' => ["required",'max:125'],
+            'titre_5' => ["required",'max:125'],
+            'titre_6' => ["required",'max:125'],
+            'titre_7' => ["required",'max:125'],
+            'description_1' =>["required",'max:360'],
+            'description_2' => ["required",'max:360'],
+            'description_3' => ["required",'max:100'],
         ]);
             $contenu = Contenu::first();
             $contenu->titre_1 = $request->titre_1;
@@ -56,13 +56,13 @@ class ContenuController extends Controller
     }
     public function editcontact(Contenu $id, Request $request){
         request()->validate([
-            'contact_titre' => ["required"],
-            'contact_description' => ["required"],
-            'contact_soustitre' => ["required"],
-            'contact_rue' => ["required"],
-            'contact_ville' => ["required"],
-            'contact_email' => ["required"],
-            'contact_telephone' => ["required"],
+            'contact_titre' => ["required",'max:25'],
+            'contact_description' => ["required",'max:250'],
+            'contact_soustitre' => ["required",'max:25'],
+            'contact_rue' => ["required",'max:100'],
+            'contact_ville' => ["required",'max:100'],
+            'contact_email' => ["required",'max:25'],
+            'contact_telephone' => ["required",'max:100'],
         ]);
             $contenu = Contenu::first();
             $contenu->titre_1 = $contenu->titre_1;

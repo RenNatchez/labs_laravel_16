@@ -19,6 +19,7 @@ class CreateBlogsTable extends Migration
             $table->text('contenu');
             $table->string('image');
             $table->string('validate');
+            $table->string('delete');
             
             $table->unsignedBigInteger('user_id');
             $table->foreign('user_id')->references('id')->on('users');

@@ -13,7 +13,7 @@ use Illuminate\Support\Facades\Storage;
 class ArticlesController extends Controller
 {
     public function index(){
-        $articles = blog::all();
+        $articles = blog::all()->where('validate',1);
         return view('admin.pages.articles.articles', compact('articles'));
     }
     public function create()
@@ -52,8 +52,9 @@ class ArticlesController extends Controller
         if (Auth::user()->role_id == 1) {
             $article->validate = true;
         } else {
-            $article->categorie_id = false;
+            $article->validate = false;
         };
+        $article->delete = false;
         $article->save();
         if ($request->tags == 0) {
         } else {

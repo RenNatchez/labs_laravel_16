@@ -29,7 +29,7 @@
                 <x-label for="titre" />
                 <x-input placeholder='Entrer votre titre' id="titre"
                 class="block mt-1 pl-3 w-full bg-gray-800 text_input py-3" type="texte"
-                name="titre" value="{{$service->titre}}" />
+                name="titre" value="{{$service->titre}}" required/>
             </div>
             <!-- icone -->
             <div class="w-11/12 sm:w-full my-6 mx-auto">
@@ -49,7 +49,7 @@
                 <x-label for="description" />
                 <x-input placeholder='Entrer votre description' id="description"
                     class="block mt-1 pl-3 w-full bg-gray-800 text_input py-3" type="texte"
-                    name="description" value="{{$service->description}}" />
+                    name="description" value="{{$service->description}}" required/>
             </div>
         </div> 
     <div class="flex w-100 justify-end">

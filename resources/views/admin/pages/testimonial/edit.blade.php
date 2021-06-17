@@ -30,27 +30,31 @@
                     <x-label for="nom" />
                     <x-input placeholder='Entrer le nom' id="nom"
                         class="block mt-1 pl-3 w-full bg-gray-800 text_input py-3" type="texte" name="nom"
-                        value="{{$testimonial->nom}}" />
+                        value="{{$testimonial->nom}}" required/>
                 </div>
                 <div class="w-11/12 sm:w-5/12 sm:mx-0 mx-auto lg:w-3/12 my-6 border-b-2 border-green-400">
                     <x-label for="prenom" />
                     <x-input placeholder='Entrer le prenom' id="prenom"
                         class="block mt-1 pl-3 w-full bg-gray-800 text_input py-3" type="texte" name="prenom"
-                        value="{{$testimonial->prenom}}" />
+                        value="{{$testimonial->prenom}}" required/>
                 </div>
                 <div class="w-11/12 sm:w-full sm:mx-0 mx-auto lg:w-3/12 my-6 border-b-2 border-green-400">
                     <x-label for="poste" />
                     <x-input placeholder='Entrer le poste' id="poste"
                         class="block mt-1 pl-3 w-full bg-gray-800 text_input py-3" type="texte" name="poste"
-                        value="{{$testimonial->poste}}" />
+                        value="{{$testimonial->poste}}" required/>
                 </div>
             </div>
             <!-- description -->
             <div class="w-11/12 sm:w-full my-6 mx-auto border-b-2 border-green-400">
                 <x-label for="avis" />
                 <x-input placeholder="Entrer l'avis" id="avis"
-                    class="block mt-1 pl-3 w-full bg-gray-800 text_input py-3" type="texte" name="avis"
-                    value="{{$testimonial->avis}}" />
+                    class="@error('avis') is-invalid @enderror block mt-1 pl-3 w-full bg-gray-800 text_input py-3" type="texte" name="avis"
+                    value="{{$testimonial->avis}}" required/>
+                    @error('avis')
+                    <span class="feedback-invalid text-red-700">{{$message}}</span>
+                @enderror
+
             </div>
             <div class="form-group">
                 <label for="photo"

@@ -15,7 +15,7 @@
                 @foreach ($item->tags as $tag)
                 <a href="">{{$tag->nom}}</a>
                 @endforeach
-                <a href="">{{count($item->comments)}} Comments</a>
+                <a href="">{{count($item->comments->where('valide',1))}} Comments</a>
             </div>
             <p>{{Str::limit($item->contenu, 280, '...') }}</p>
             <a href="{{route('blog.show', $item->id)}}" class="read-more">Read More</a>

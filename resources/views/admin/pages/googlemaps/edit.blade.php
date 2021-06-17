@@ -29,7 +29,7 @@
                 <x-label for="video" />
                 <x-input placeholder="Entrer l'URL de votre vidéo" id="coordonees"
                 class="block mt-1 pl-3 w-full bg-gray-800 text_input py-3" type="texte"
-                name="coordonees" value="{{$maps->longitude}}, {{$maps->latitude}}" />
+                name="coordonees" value="{{$maps->longitude}}, {{$maps->latitude}}" required/>
             </div>
         </div> 
     <div class="flex w-100 justify-end">
