@@ -7,18 +7,18 @@ use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Mail\Mailable;
 use Illuminate\Queue\SerializesModels;
 
-class MailSender extends Mailable
+class InscriptionSender extends Mailable
 {
     use Queueable, SerializesModels;
-    public $mail;
+
     /**
      * Create a new message instance.
      *
      * @return void
      */
-    public function __construct($request)
+    public function __construct()
     {
-        $this->mail = $request;
+        //
     }
 
     /**
@@ -28,7 +28,6 @@ class MailSender extends Mailable
      */
     public function build()
     {
-        return $this->from('info@labs.com')->view('mail.contact')->subject('Demande de contact');
+        return $this->from('info@labs.com')->view('mail.inscription')->subject('nouvelle inscription');
     }
 }
-

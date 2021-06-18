@@ -33,6 +33,10 @@ class ContenuSeeder extends Seeder
             'contact_ville' => '05200 Arévalo',
             'contact_telephone' => '0034 37483 2445 322',
             'contact_email' => 'hello@company.com',
+            'footer_text' => '2017 All rights reserved. Designed by ',
+            'footer_link' => 'https://colorlib.com',
+            'footer_lien' => 'Colorlib',
+            
             'created_at'=>now()]
         ]);
     }

@@ -27,6 +27,9 @@ class ContenuController extends Controller
             'description_1' =>["required",'max:360'],
             'description_2' => ["required",'max:360'],
             'description_3' => ["required",'max:100'],
+            'footer_text' => ["required",'max:100'],
+            'footer_link' => ["required",'max:50'],
+            'footer_lien' => ["required",'max:50'],
         ]);
             $contenu = Contenu::first();
             $contenu->titre_1 = $request->titre_1;
@@ -39,6 +42,9 @@ class ContenuController extends Controller
             $contenu->description_1 =$request->description_1;
             $contenu->description_2 =$request->description_2;
             $contenu->description_3 = $request->description_3;
+            $contenu->footer_text = $request->footer_text;
+            $contenu->footer_link = $request->footer_link;
+            $contenu->footer_lien = $request->footer_lien;
             $contenu->contact_titre = $contenu->contact_titre;
             $contenu->contact_description = $contenu->contact_description;
             $contenu->contact_soustitre = $contenu->contact_soustitre;
@@ -75,6 +81,9 @@ class ContenuController extends Controller
             $contenu->description_1 =$contenu->description_1;
             $contenu->description_2 =$contenu->description_2;
             $contenu->description_3 = $contenu->description_3;
+            $contenu->footer_text = $contenu->footer_text;
+            $contenu->footer_link = $contenu->footer_link;
+            $contenu->footer_lien = $contenu->footer_lien;
             $contenu->contact_titre = $request->contact_titre;
             $contenu->contact_description = $request->contact_description;
             $contenu->contact_soustitre = $request->contact_soustitre;

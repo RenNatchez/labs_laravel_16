@@ -6,7 +6,7 @@
         <div class="mr-6">
             <h2
                 class="text-3xl text_green md:text-4xl font-semibold tracking-tight leading-7 md:leading-10 mb-1 truncate">
-                Membre</h2>
+                Commentaire</h2>
         </div>
         <div class="flex items-center">
             <a href="{{route('verif.index')}}">

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
+use App\Mail\InscriptionSender;
 use App\Models\Poste;
 use App\Models\User;
 use App\Providers\RouteServiceProvider;
@@ -10,6 +11,7 @@ use Illuminate\Auth\Events\Registered;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Validation\Rules;
 
 class RegisteredUserController extends Controller
@@ -57,7 +59,8 @@ class RegisteredUserController extends Controller
             'role_id' => 4,
             'password' => Hash::make($request->password),
         ]);
-
+        
+        Mail::to($request->email)->send(new InscriptionSender($request));
         event(new Registered($user));
 
         Auth::login($user);

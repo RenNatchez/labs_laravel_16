@@ -2,13 +2,16 @@
 
 namespace App\Http\Controllers;
 
+use App\Mail\ArticleSender;
 use App\Models\blog;
 use App\Models\Blogtags;
 use App\Models\Comments;
+use App\Models\Newsletter;
 use App\Models\role;
 use App\Models\Tag;
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
 
 class VerifController extends Controller
 {
@@ -53,6 +56,11 @@ class VerifController extends Controller
         $article = $id;
         $article->validate = 1;
         $article->save();
+        $mails = Newsletter::all();
+        foreach ($mails as $mail ) {
+            Mail::to($mail->mail)->send(new ArticleSender());
+        };
+
         return redirect()->route('verif.article');
     }
     public function articledestroy(blog $id) {

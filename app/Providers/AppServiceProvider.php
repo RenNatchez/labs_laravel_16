@@ -30,16 +30,16 @@ class AppServiceProvider extends ServiceProvider
         PaginationPaginator::useBootstrap();
         
         Blade::if('admin', function () {
-            return Auth::user()->role_id == 1;
+            return Auth::user()->role_id == 1 ||  Auth::user()->role_id == 2; 
         });
         // Blade::if('Webmaster', function () {
         //     return Auth::user()->role_id == 1 ||  Auth::user()->role_id == 2;
         // });
 
 
-        // Blade::if('Redacteur', function () {
-        //     return Auth::user()->role_id == 1 ||  Auth::user()->role_id == 2 || Auth::user()->role_id == 3;
-        // });
+        Blade::if('redacteur', function () {
+            return Auth::user()->role_id == 1 ||  Auth::user()->role_id == 2 || Auth::user()->role_id == 3;
+        });
         // Blade::if('Membre', function () {
         //     return Auth::user()->role_id == 4;
         // });

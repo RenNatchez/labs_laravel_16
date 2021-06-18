@@ -33,6 +33,9 @@ class FrontendControllers extends Controller
     {
         $currentpage = 'Home';
         $contenu = Contenu::first();
+        $footer_text = $contenu->footer_text;
+        $footer_link = $contenu->footer_link;
+        $footer_lien = $contenu->footer_lien;
         $parenthese = ['(',')'];
         $span = ['<span>','</span>'];
         $titre_1 = $contenu->titre_1;
@@ -63,7 +66,7 @@ class FrontendControllers extends Controller
             $centre = $ceo->random(1);
         };
     
-        return view('home',compact('contenu','titre1','titre2','titre3','titre4','titre5','centre','user_random','ceo','carousels','serv_random','video','currentpage','serv_random2','testi_last','subjects'));
+        return view('home',compact('footer_lien','footer_link','footer_text','contenu','titre1','titre2','titre3','titre4','titre5','centre','user_random','ceo','carousels','serv_random','video','currentpage','serv_random2','testi_last','subjects'));
     }
     public function mailling (Request $request)
     {
@@ -86,6 +89,9 @@ class FrontendControllers extends Controller
     
         $currentpage = 'Services';
         $contenu = Contenu::first();
+        $footer_text = $contenu->footer_text;
+        $footer_link = $contenu->footer_link;
+        $footer_lien = $contenu->footer_lien;
         $parenthese = ['(',')'];
         $span = ['<span>','</span>'];
         $titre_6 = $contenu->titre_6;
@@ -99,7 +105,7 @@ class FrontendControllers extends Controller
         $serv_random = $services->sortByDesc('created_at')->take(6)->slice(0,3);
         $serv_random2 = $services->sortByDesc('created_at')->take(6)->slice(3,5);
         $serv_page = Service::orderByDesc('id')->paginate(9)->fragment('services');
-        return view('front-end.pages.services',compact('blog','titre6','titre7','contenu','subjects','services','currentpage','serv_page','serv_random','serv_random2'));
+        return view('front-end.pages.services',compact('footer_lien','footer_link','footer_text','blog','titre6','titre7','contenu','subjects','services','currentpage','serv_page','serv_random','serv_random2'));
     }
     public function newsletter (Request $request)
     {
@@ -118,27 +124,39 @@ class FrontendControllers extends Controller
     public function contact()
     {
         $contenu = Contenu::first();
+        $footer_text = $contenu->footer_text;
+        $footer_link = $contenu->footer_link;
+        $footer_lien = $contenu->footer_lien;
         $currentpage = 'Contact';
         $maps = Googlemaps::first();
         $subjects = Subject::all();
-        return view('front-end.pages.contact',compact('contenu','currentpage','subjects','maps'));
+        return view('front-end.pages.contact',compact('footer_lien','footer_link','footer_text','contenu','currentpage','subjects','maps'));
     }
     public function blog()
     {
         $currentpage = 'Blog';
-        $blog = blog::orderByDesc('id')->where('validate',1)->paginate(3);
+        $contenu = Contenu::first();
+        $footer_text = $contenu->footer_text;
+        $footer_link = $contenu->footer_link;
+        $footer_lien = $contenu->footer_lien;
+        $blog = blog::orderByDesc('id')->where('validate',1)->where('delete',0)->paginate(3);
         $tags = Tag::all(); 
         $categorie = Categorie::all(); 
-        return view('front-end.pages.blog',compact('currentpage','blog','tags','categorie'));
+        return view('front-end.pages.blog',compact('footer_lien','footer_link','footer_text','currentpage','blog','tags','categorie'));
     }
     public function blogshow(blog $id)
     {
         $currentpage = 'Blog';
+        $contenu = Contenu::first();
+        $footer_text = $contenu->footer_text;
+        $footer_link = $contenu->footer_link;
+        $footer_lien = $contenu->footer_lien;
+
         $article = $id;
         $tags = Tag::all(); 
         $categorie = Categorie::all(); 
         $comment = Comments::all()->where('valide',1); 
-        return view('front-end.pages.blogshow',compact('currentpage','tags','categorie','article','comment'));
+        return view('front-end.pages.blogshow',compact('footer_lien','footer_link','footer_text','currentpage','tags','categorie','article','comment'));
     }
     public function addcomment (Request $request, blog $article)
     {
@@ -159,7 +177,11 @@ class FrontendControllers extends Controller
     public function categorie(Categorie $id)
     {
         $currentpage = 'Blog';
-        $article = $id;
+        $contenu = Contenu::first();
+        $footer_text = $contenu->footer_text;
+        $footer_link = $contenu->footer_link;
+        $footer_lien = $contenu->footer_lien;
+
         $tags = Tag::all(); 
         $categorie = Categorie::all(); 
         $comment = Comments::all()->where('valide',1); 
@@ -169,13 +191,16 @@ class FrontendControllers extends Controller
         $ref = $id;
         //selection categorie
         $blog = blog::orderByDesc('id')->where('categorie_id',$ref->id)->where('validate',1)->where('delete',0)->paginate(3);
-
-
-        return view('front-end.pages.blogcate', compact('url','currentpage', 'urlCurrent','blog', 'categorie', 'tags'));
+        return view('front-end.pages.blogcate', compact('url','currentpage','footer_lien','footer_link','footer_text', 'urlCurrent','blog', 'categorie', 'tags'));
     }
     public function tag(tag $id)
     {
         $currentpage = 'Blog';
+        $contenu = Contenu::first();
+        $footer_text = $contenu->footer_text;
+        $footer_link = $contenu->footer_link;
+        $footer_lien = $contenu->footer_lien;
+
         $article = $id;
         $tags = Tag::all(); 
         $categorie = Categorie::all(); 
@@ -188,7 +213,7 @@ class FrontendControllers extends Controller
         $blog = blog::orderByDesc('id')->paginate(3);
 
 
-        return view('front-end.pages.blogtag', compact('url','currentpage','ref', 'urlCurrent','blog', 'categorie', 'tags','article'));
+        return view('front-end.pages.blogtag', compact('footer_lien','footer_link','footer_text','url','currentpage','ref', 'urlCurrent','blog', 'categorie', 'tags','article'));
     }
     public function search(Request $request)
     {
@@ -196,6 +221,11 @@ class FrontendControllers extends Controller
             "article" => "required",
         ]);
         $currentpage = 'Blog';
+        $contenu = Contenu::first();
+        $footer_text = $contenu->footer_text;
+        $footer_link = $contenu->footer_link;
+        $footer_lien = $contenu->footer_lien;
+
         $q = $request->article;
         $blog = blog::orderByDesc('id')->where('validate',1)->where('titre', 'LIKE', "%{$q}%")->paginate(3);
         // return dd($articles[0]->categorie->nom);
@@ -204,7 +234,7 @@ class FrontendControllers extends Controller
         $categorie = Categorie::all();
         $tags = Tag::all();
 
-        return view('front-end.pages.blogsearch', compact('blog', 'categorie','currentpage', 'tags'));
+        return view('front-end.pages.blogsearch', compact('footer_lien','footer_link','footer_text','blog', 'categorie','currentpage', 'tags'));
     }
 
 }

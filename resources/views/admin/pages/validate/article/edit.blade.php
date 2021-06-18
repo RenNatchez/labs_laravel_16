@@ -6,10 +6,10 @@
         <div class="mr-6">
             <h2
                 class="text-3xl text_green md:text-4xl font-semibold tracking-tight leading-7 md:leading-10 mb-1 truncate">
-                Membre</h2>
+                Article</h2>
         </div>
         <div class="flex items-center">
-            <a href="{{route('verif.membre')}}">
+            <a href="{{route('verif.article')}}">
                 <button
                     class="bg-blue-600 px-5 py-2 text-lg shadow-sm font-semibold tracking-wider text-white rounded-full hover:bg-gray-200 hover:text-black">
                     Annuler

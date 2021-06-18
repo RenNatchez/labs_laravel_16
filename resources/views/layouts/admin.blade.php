@@ -67,6 +67,14 @@
                             <i class="fas fa-home fa-fw mr-3"></i><span class="pb-1 md:pb-0 text-sm">Home</span>
                         </a>
                     </li>
+                    @redacteur
+                    <li class="mr-6 my-2 md:my-0">
+                        <a href="{{route('articles.index')}}"
+                            class="block py-1 md:py-3 pl-1 align-middle text-gray-500 no-underline hover:text-gray-100 border-b-2 border-gray-900  hover:border-indigo-900">
+                            <i class="fas fa-newspaper mr-3"></i><span class="pb-1 md:pb-0 text-sm">Articles</span>
+                        </a>
+                    </li>
+                    @admin
                     <li class="mr-6 my-2 md:my-0">
                         <a href="{{route('carousel.index')}}"
                             class="block py-1 md:py-3 pl-1 align-middle text-gray-500 no-underline hover:text-gray-100 border-b-2 border-gray-900  hover:border-pink-400">
@@ -106,13 +114,8 @@
                     <li class="mr-6 my-2 md:my-0">
                         <a href="{{route('googlemaps.index')}}"
                             class="block py-1 md:py-3 pl-1 align-middle text-gray-500 no-underline hover:text-gray-100 border-b-2 border-gray-900  hover:border-gray-300">
-                            <i class="fas fa-map-marked-alt mr-3"></i><span class="pb-1 md:pb-0 text-sm">Google maps</span>
-                        </a>
-                    </li>
-                    <li class="mr-6 my-2 md:my-0">
-                        <a href="{{route('articles.index')}}"
-                            class="block py-1 md:py-3 pl-1 align-middle text-gray-500 no-underline hover:text-gray-100 border-b-2 border-gray-900  hover:border-indigo-900">
-                            <i class="fas fa-newspaper mr-3"></i><span class="pb-1 md:pb-0 text-sm">Articles</span>
+                            <i class="fas fa-map-marked-alt mr-3"></i><span class="pb-1 md:pb-0 text-sm">Google
+                                maps</span>
                         </a>
                     </li>
                     <li class="mr-6 my-2 md:my-0">
@@ -127,7 +130,9 @@
                             <i class="fas fa-check-double mr-3"></i><span class="pb-1 md:pb-0 text-sm">Validate</span>
                         </a>
                     </li>
-            </ul>
+                    @endadmin
+                    @endredacteur
+                </ul>
             </div>
 
         </div>

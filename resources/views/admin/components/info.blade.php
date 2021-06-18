@@ -29,7 +29,7 @@
                             </div>
                             <div class="flex-1 text-right md:text-center">
                                 <h5 class="font-bold uppercase text-gray-400">Membres</h5>
-                                <h3 class="font-bold text-3xl text-gray-600">7 membres</h3>
+                                <h3 class="font-bold text-3xl text-gray-600">{{$membre->count()}}</h3>
                             </div>
                         </div>
                     </div>
@@ -46,7 +46,7 @@
                             </div>
                             <div class="flex-1 text-right md:text-center">
                                 <h5 class="font-bold uppercase text-gray-400">Articles</h5>
-                                <h3 class="font-bold text-3xl text-gray-600">26</h3>
+                                <h3 class="font-bold text-3xl text-gray-600">{{$blog->count()}}</h3>
                             </div>
                         </div>
                     </div>
@@ -78,9 +78,6 @@
                             <h1 class="text-3xl text-gray-600"><span class="text_green">{{Auth::user()->nom}} {{Auth::user()->prenom}} | | </span>{{Auth::user()->poste->nom}}</h1>
                             <div class="px-20 my-5">
                                 <p class="text-white  text-xl">Email</p><hr class="my-3">
-                                @admin
-                                <h1>test</h1>
-                                @endadmin
                                 <p class="text-gray-500">{{Auth::user()->email}}</p>
                             </div>
                             <div class="px-20 my-5">

@@ -16,6 +16,17 @@ class ArticlesController extends Controller
         $articles = blog::all()->where('validate',1);
         return view('admin.pages.articles.articles', compact('articles'));
     }
+    public function corbeille(){
+        $articles = blog::all()->where('delete',1);
+        return view('admin.pages.articles.corbeille', compact('articles'));
+    }
+    public function reset (blog $id ){
+        $article = $id;
+        $article->delete = 0;
+        $article->validate = 0;
+        $article->save();
+        return redirect()->route('articles.index');
+    }
     public function create()
     {
         $categorie = Categorie::all();
@@ -29,7 +40,10 @@ class ArticlesController extends Controller
         return view('admin.pages.articles.edit',compact('article','categorie','tags'));
     }
     public function destroy(blog $id) {
-        $id->delete();
+        $article = $id;
+        $article->delete = 1;
+        $article->save();
+
         return redirect()->back();
     }
     public function store(Request $request)

@@ -32,6 +32,9 @@ class CreateContenusTable extends Migration
             $table->string('contact_ville',100);
             $table->string('contact_telephone',25);
             $table->string('contact_email',100);
+            $table->string('footer_text',100);
+            $table->string('footer_link',50);
+            $table->string('footer_lien',50);
             $table->timestamps();
         });
     }

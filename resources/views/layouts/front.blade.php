@@ -75,6 +75,10 @@
     @yield('content')
     <!-- Composant end -->
     <!-- Footer  -->
+    <footer class="footer-section">
+		<h2>{{$footer_text}} <a href="{{$footer_link}}" target="_blank"> {{$footer_lien}}</a></h2>
+	</footer>
+
     <!-- Footer end -->
 
     <!--====== Javascripts & Jquery ======-->
